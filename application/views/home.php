@@ -174,10 +174,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
                 <div class="priceContainer">
                     <p class="priceText"><strong>$295.58</strong></p>
-                    <div class="bookmarkContainer">
-                        <img src="http://localhost/freshfood/assets/images/bookmark.png" alt="icon"
-                            class="bookmarkIcon">
-                    </div>
+
                     <div class="addCartContainer">
                         <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="priceCartIcon">
                         <p class="addCartText">Add Cart</p>
