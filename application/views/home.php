@@ -32,10 +32,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="userIconContainer">
                             <img src="http://localhost/freshfood/assets/images/user.png" alt="icon" class="userIcon">
                         </div>
-                        <div class="userIconContainer">
+                        <bottom class="userIconContainer2">
                             <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
-                        </div>
-                        <div class="userIconContainer">
+                        </bottom>
+                        <div class="userIconContainer3">
                             <img src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon" class="userIcon">
                         </div>
                     </div>

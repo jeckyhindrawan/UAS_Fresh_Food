@@ -26,9 +26,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password">
+
                     </div>
                     <input type="submit" class="btn solid" value="Login" />
-                    <p class="social-text">Or Sign in with social platform</p>
+                    <button class="btnSignup" type="submit">Or Sign Up Now</button>
+
+
 
                 </form>
             </div>

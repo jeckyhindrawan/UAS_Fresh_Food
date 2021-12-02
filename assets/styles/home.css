@@ -90,6 +90,30 @@ body {
 	margin-right: 20px;
 }
 
+.userIconContainer2 {
+	border: 1px solid #d3d3d3;
+	border-radius: 8px;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+}
+.userIconContainer2:hover{
+background: #aaa;
+}
+.userIconContainer3 {
+	border: 1px solid #d3d3d3;
+	border-radius: 8px;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+}
+
 .bottomLeftMenu {
 	display: flex;
 	margin-left: 52px;

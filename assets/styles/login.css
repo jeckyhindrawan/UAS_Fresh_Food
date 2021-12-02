@@ -111,11 +111,16 @@ font-weight: 500;
     background-color: #94e4b0;
 }
 
-.social-text{
-    padding: 0.7rem 0;
+.btnSignup{
+    width: 150px;
+    height: 45px;
+    border: 2px ;
+    border-radius: 30px;
+    border-width: 6px;
+    color: #333;
+    margin: 10px 0;
 }
 
-.social-media{
-    display: flex;
-    justify-content: center;
+.btnSignup:hover{
+    background-color: #aaa;
 }
