@@ -13,7 +13,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
-
     <div class="container">
         <div class="header">
             <div class="menuBar">
@@ -67,22 +66,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <div class="mainContainer">
             <div class="foodContainer">
+                <?php
+                foreach ($food_details as $fd) {
+                ?>
                 <div class="bigMenu">
                     <img src="http://localhost/freshfood/assets/images/chickenStick.png" alt="image"
                         class="chickenImage">
                     <div>
-                        <p class="menuTitle"><strong>Clean Eating 7 days Meal Plan</strong></p>
-                        <p class="caloriesDaysText">1700 Calories / days</p>
+                        <p class="menuTitle"><strong><?php echo $fd->title ?></strong></p>
+                        <p class="caloriesDaysText"><?php echo $fd->subtitle ?></p>
                         <div class="bigMenu">
                             <div class="containerIconLonceng">
                                 <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
                                     class="iconLoncengKecil">
-                                <p class="smallText">28 Meals</p>
+                                <p class="smallText"><?php echo $fd->meals ?> Meals</p>
                             </div>
                             <div class="containerIconLonceng">
                                 <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
                                     class="clockIcon">
-                                <p class="smallText">7 Days</p>
+                                <p class="smallText"><?php echo $fd->days ?> Days</p>
                             </div>
                             <div class="containerIconLonceng">
                                 <img src="http://localhost/freshfood/assets/images/text.png" alt="icon"
@@ -96,12 +98,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <p class="ratingText">5.0</p>
+                            <p class="ratingText"><?php echo $fd->RATING ?></p>
                         </div>
-                        <p class="menuDesc">A little bit nutty and a whole lot noice, thid healthy spin on the takeout
-                            classic stars chicken and veg in a sweet and
-                            savoury stir-fry sauce. Based on what you’ve told us, We’ve customised a clean eating meal
-                            paln.</p>
+                        <p class="menuDesc"><?php echo $fd->description ?></p>
                         <div class="bigMenu">
                             <div class="categoryContainer">
                                 <p class="categoryText">Vegetarian</p>
@@ -129,6 +128,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
+                <?php } ?>
                 <!-- bottom menu -->
                 <p class="day">Day 1</p>
                 <div class="underlineBox"></div>
