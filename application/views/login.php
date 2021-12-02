@@ -10,7 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://localhost/freshfood/assets/styles/login.css">
 </head>
 
 <body>
@@ -27,6 +27,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password">
                     </div>
+                    <input type="submit" class="btn solid" value="Login" />
+                    <p class="social-text">Or Sign in with social platform</p>
+
                 </form>
             </div>
         </div>
