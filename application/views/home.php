@@ -37,7 +37,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <input class="search-txt" type="text" name="" placeholder="Type to search">
                             <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
                         </div>
-                        <div class="userIconContainer">
+                        <div class="box">
                             <img src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon" class="userIcon">
                         </div>
                     </div>

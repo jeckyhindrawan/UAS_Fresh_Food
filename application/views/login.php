@@ -17,12 +17,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="<?php echo base_url() . 'login/actionLogin'?>" class="sign-in-form" method="POST">
+                <form action="<?php echo base_url() . 'login/actionLogin' ?>" class="sign-in-form" method="POST">
                     <h2 class="title">Sign In</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username" required
-                            value="<?= set_value('username');?>" />
+                        <input type="text" placeholder="Username" name="username" required value="<?= set_value('username'); ?>" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
