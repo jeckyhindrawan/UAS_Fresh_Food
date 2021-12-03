@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <p class="ratingText"><?php echo $fd->RATING ?></p>
+                            <p class="ratingText"><?php echo $fd->rating ?></p>
                         </div>
                         <p class="menuDesc"><?php echo $fd->description ?></p>
                         <div class="bigMenu">
