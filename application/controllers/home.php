@@ -23,8 +23,8 @@ class Home extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('food_details_model');
-        $this->load->helper('url');
+        $this->load->model('food_details_model'); 
+        isLoggedIn();
     }
 
     public function index()
