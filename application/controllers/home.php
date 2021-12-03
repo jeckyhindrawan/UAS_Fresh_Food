@@ -23,13 +23,15 @@ class Home extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('food_details_model'); 
+        $this->load->model('food_details_model');
+        $this->load->model('categories');
         isLoggedIn();
     }
 
     public function index()
     {
         $data['food_details'] = $this->food_details_model->tampil_data()->result();
+        $data['categories'] = $this->categories->tampil_data()->result();
         $this->load->view('home', $data);
     }
 }

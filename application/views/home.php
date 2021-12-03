@@ -105,76 +105,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                         <p class="menuDesc"><?php echo $fd->description ?></p>
                         <div class="bigMenu">
+                            <?php
+                                foreach ($categories as $c) {
+                                ?>
+
                             <div class="categoryContainer">
-                                <p class="categoryText">Vegetarian</p>
+                                <p class="categoryText"><?php echo $c->name ?></p>
                             </div>
-                            <div class="categoryContainer">
-                                <p class="categoryText">Low-calorie</p>
-                            </div>
-                            <div class="categoryContainer">
-                                <p class="categoryText">7 days plan</p>
-                            </div>
-                            <div class="categoryContainer">
-                                <p class="categoryText">Detoxing</p>
-                            </div>
-                        </div>
-                        <div class="bigMenu">
-                            <div class="secondCategoryContainer">
-                                <p class="secondCategoryText">Lunch + Dinner</p>
-                            </div>
-                            <div class="selectedSecondCategoryContainer">
-                                <p class="selectedSecondCategoryText">All Meals</p>
-                            </div>
-                            <div class="secondCategoryContainer">
-                                <p class="secondCategoryText">Lunch + Snacks</p>
-                            </div>
+
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
                 <?php } ?>
-                <!-- bottom menu -->
-                <p class="day">Day 1</p>
-                <div class="underlineBox"></div>
-                <div class="bigMenu">
-                    <div class="bottomFoodContainer">
-                        <p class="day"><strong>Breakfast</strong></p>
-                        <img src="http://localhost/freshfood/assets/images/friedPasta.png" alt="menu"
-                            class="bottomMenu1">
-                        <p class="bottomFoodTitle">Blueberry Yoghurt with
-                            Protein Granola</p>
-                    </div>
-                    <div class="bottomFoodContainer">
-                        <p class="day"><strong>Lunch</strong></p>
-                        <img src="http://localhost/freshfood/assets/images/tomatoPasta.png" alt="menu"
-                            class="bottomMenu1">
-                        <p class="bottomFoodTitle">Loaded chicken and
-                            pumpkin salad</p>
-                    </div>
-                    <div class="bottomFoodContainer">
-                        <p class="day"><strong>Evening meal</strong></p>
-                        <img src="http://localhost/freshfood/assets/images/friedrice.png" alt="menu"
-                            class="bottomMenu1">
-                        <p class="bottomFoodTitle">Satay chicken with
-                            radicchio sauce</p>
-                    </div>
-                    <div class="bottomFoodContainer">
-                        <p class="day"><strong>Snack 1</strong></p>
-                        <div class="snackContainer">
-                            <div class="bigPlusContainer">
-                                <p class="bigPlus">+</p>
-                            </div>
-                        </div>
-                        <p class="bottomFoodTitle">Choose Yourself a
-                            snack</p>
-                    </div>
-                    <div class="bottomFoodContainer">
-                        <p class="day"><strong>Dinner</strong></p>
-                        <img src="http://localhost/freshfood/assets/images/mincedPork.png" alt="menu"
-                            class="bottomMenu1">
-                        <p class="bottomFoodTitle">Nonnas spaghettie
-                            bolognaise</p>
-                    </div>
-                </div>
                 <div class="priceContainer">
                     <p class="priceText"><strong>$295.58</strong></p>
 

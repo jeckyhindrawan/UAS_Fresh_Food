@@ -281,31 +281,6 @@ body {
 	color: #535353;
 }
 
-.secondCategoryContainer {
-	border: 1px solid #d3d3d3;
-	border-radius: 4px;
-	width: 130px;
-	height: 34px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 3px;
-	margin-top: 19px;
-}
-
-.selectedSecondCategoryContainer {
-	border: 1px solid rgba(29, 207, 92, 1);
-	border-radius: 4px;
-	width: 130px;
-	height: 34px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 3px;
-	margin-top: 19px;
-	background-color: rgba(29, 207, 92, 0.2);
-}
-
 .secondCategoryText {
 	font-size: 14px;
 }
@@ -506,4 +481,3 @@ body {
 	margin-right: 16px;
 	margin-left: 16px;
 }
-
