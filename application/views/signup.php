@@ -16,26 +16,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
     <div class="container">
         <div class="forms-container">
-            <div class="signin-signup">
-                <form action="<?php echo base_url() . 'login/actionLogin'?>" class="sign-in-form" method="POST">
-                    <h2 class="title">Sign In</h2>
+            <div class="signup-signup">
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">Sign Up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username" required
-                            value="<?= set_value('username');?>" />
+                        <input type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password" required />
+                        <input type="password" placeholder="Password" />
                     </div>
                     <input type="submit" class="btn solid" value="Login" />
-                    <button class="btnSignup" href="/aplication/views/signup.php">Or Sign Up Now</button>
-
-
-
-                </form>
             </div>
-
         </div>
     </div>
 </body>

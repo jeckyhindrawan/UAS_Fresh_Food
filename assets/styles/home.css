@@ -90,7 +90,7 @@ body {
 	margin-right: 20px;
 }
 
-.userIconContainer2 {
+.search-box {
 	border: 1px solid #d3d3d3;
 	border-radius: 8px;
 	width: 44px;
@@ -100,18 +100,28 @@ body {
 	justify-content: center;
 	margin-right: 20px;
 }
-.userIconContainer2:hover{
-background: #aaa;
+
+.search-box:hover {
+	width: 200px;
+	transition: 0.3s;
 }
-.userIconContainer3 {
-	border: 1px solid #d3d3d3;
-	border-radius: 8px;
-	width: 44px;
-	height: 44px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 20px;
+
+.search-box:hover > .search-txt {
+	visibility: visible;
+	width: 150px;
+	transition: 0.3s;
+}
+
+.search-txt {
+	visibility: hidden;
+	border: none;
+	background: transparent;
+	outline: none;
+	padding: 0px;
+	color: black;
+	font-size: 16px;
+	float: left;
+	width: 0px;
 }
 
 .bottomLeftMenu {
@@ -496,3 +506,4 @@ background: #aaa;
 	margin-right: 16px;
 	margin-left: 16px;
 }
+

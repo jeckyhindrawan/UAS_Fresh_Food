@@ -24,6 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="menuList">Contact</p>
                     </div>
                     <div class="rightMenu">
+
                         <div class="cartContainer">
                             <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="cartIcon">
                             <p>Your Cart (0)</p>
@@ -31,10 +32,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="userIconContainer">
                             <img src="http://localhost/freshfood/assets/images/user.png" alt="icon" class="userIcon">
                         </div>
-                        <bottom class="userIconContainer2">
+
+                        <div class="search-box">
+                            <input class="search-txt" type="text" name="" placeholder="Type to search">
                             <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
-                        </bottom>
-                        <div class="userIconContainer3">
+                        </div>
+                        <div class="userIconContainer">
                             <img src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon" class="userIcon">
                         </div>
                     </div>
