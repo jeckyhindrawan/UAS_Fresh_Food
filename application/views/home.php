@@ -108,11 +108,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php
                                 foreach ($categories as $c) {
                                 ?>
-
                             <div class="categoryContainer">
                                 <p class="categoryText"><?php echo $c->name ?></p>
                             </div>
-
                             <?php } ?>
                         </div>
                     </div>
@@ -189,29 +187,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <img src="http://localhost/freshfood/assets/images/justwing.png" alt="imageMenu" class="pastaImage">
                     <div>
                         <p class="judulMakananSideBar"><strong>Just Wing it Brekky Ball</strong></p>
-                        <div class="bigMenu">
-                            <div class="containerIconClock">
-                                <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
-                                    class="iconLoncengKecil">
-                                <p class="sideBarSmallText">28 Meals</p>
-                            </div>
-                            <div class="containerIconClock">
-                                <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
-                                    class="clockIcon">
-                                <p class="sideBarSmallText">7 Days</p>
-                            </div>
-                        </div>
-                        <div class="sideBarAddCartContainer">
-                            <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon"
-                                class="sideBarPriceCartIcon">
-                            <p class="sideBarAddCartText">Add Cart</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebarContainer3">
-                    <img src="http://localhost/freshfood/assets/images/Youtella.png" alt="imageMenu" class="pastaImage">
-                    <div>
-                        <p class="judulMakananSideBar"><strong>Youtella Protein Cookies</strong></p>
                         <div class="bigMenu">
                             <div class="containerIconClock">
                                 <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
