@@ -55,18 +55,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 foreach ($food_details as $fd) {
                 ?>
                     <div class="listMenu">
-                        <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
+                        <img class="listMenuImage" src="http://localhost/freshfood/assets/images/<?php echo $fd->id ?>.png" alt="image">
                         <div class="listMenuContent">
                             <div class="bigMenu">
-                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                                <?php
+                                for ($i = 0; $i < $fd->rating; $i++) {
+                                ?>
+                                    <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                                <?php } ?>
                             </div>
                             <p class="listMenuTitle"><?php echo $fd->title ?></p>
                             <p class="listMenuDesc"><?php echo $fd->description ?></p>
-                            <p class="listMenuTitle">$<?php echo $fd->price ?></p>
+                            <p class="listMenuPrice">$<?php echo $fd->price ?></p>
                         </div>
                     </div>
                 <?php } ?>
