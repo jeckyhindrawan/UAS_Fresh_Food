@@ -46,7 +46,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="bottomMenuList">Weight Loss</p>
                         <p class="bottomMenuList">Weight Gain</p>
                     </div>
-                    <div class="rightMenu">
+                    <!-- <div class="rightMenu">
                         <div class="leafIconContainer">
                             <img src="http://localhost/freshfood/assets/images/leaf.png" alt="icon" class="leafIcon">
                             <p>Dietary</p>
@@ -58,9 +58,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="sortContainer">
                             <p>Sort by: <strong>Recommended</strong>
                             </p>
-                            <img src="http://localhost/freshfood/assets/images/chevron-down.png" alt="icon" class="downIcon">
+                            <img src="http://localhost/freshfood/assets/images/chevron-down.png" alt="icon"
+                                class="downIcon">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

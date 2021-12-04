@@ -24,7 +24,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="menuList">Contact</p>
                     </div>
                     <div class="rightMenu">
-
                         <div class="cartContainer">
                             <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="cartIcon">
                             <p>Your Cart (0)</p>
@@ -47,21 +46,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="bottomSelectedMenu">All</p>
                         <p class="bottomMenuList">Weight Loss</p>
                         <p class="bottomMenuList">Weight Gain</p>
-                    </div>
-                    <div class="rightMenu">
-                        <div class="leafIconContainer">
-                            <img src="http://localhost/freshfood/assets/images/leaf.png" alt="icon" class="leafIcon">
-                            <p>Dietary</p>
-                        </div>
-                        <div class="bookIconContainer">
-                            <img src="http://localhost/freshfood/assets/images/book.png" alt="icon" class="leafIcon">
-                            <p>Calories</p>
-                        </div>
-                        <div class="sortContainer">
-                            <p>Sort by: <strong>Recommended</strong>
-                            </p>
-                            <img src="http://localhost/freshfood/assets/images/chevron-down.png" alt="icon" class="downIcon">
-                        </div>
                     </div>
                 </div>
             </div>
