@@ -176,308 +176,55 @@ body {
 .mainContainer {
 	margin-top: 163px;
 	padding-top: 50px;
-	background-color: #e5e5e5;
+	background-color: white;
+	padding: 52px;
 	padding-bottom: 34px;
 	font-weight: 400;
-	display: flex;
 	margin-bottom: -10px;
 }
 
-.foodContainer {
-	background-color: #ffffff;
-	margin-left: 20px;
-	width: 977px;
-	padding: 32px;
-}
-
-.chickenImage {
-	width: 422px;
-	height: 350px;
-	margin-right: 27px;
-	margin-bottom: 35px;
-}
-
-.bigMenu {
+.ListMenuContainer {
 	display: flex;
+	margin-bottom: 30px;
 }
 
-.menuTitle {
-	font-size: 24px;
-	margin-top: 13px;
+.listMenu {
+	width: 320px;
+	border: 1px solid #cdcccc;
+	border-radius: 15px;
+	background-color: white;
+	margin-right: 20px;
 }
 
-.caloriesDaysText {
-	font-size: 14px;
-	color: #bebebe;
-	margin-top: 21px;
-	margin-bottom: 20px;
+.listMenu:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: pointer;
 }
 
-.iconLoncengKecil {
-	width: 15px;
-	height: 10px;
-	margin-right: 7px;
-}
-
-.clockIcon {
-	width: 14px;
-	height: 14px;
-	margin-right: 7px;
-	margin-top: -2px;
-}
-
-.textIcon {
-	width: 12px;
-	height: 14px;
-	margin-right: 7px;
-	margin-top: -2px;
-}
-
-.containerIconLonceng {
-	display: flex;
-	margin-right: 28px;
-}
-
-.smallText {
-	font-size: 15px;
-	margin-top: -4px;
+.listMenuImage {
+	width: 320px;
+	height: 180px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
 .starIcon {
 	width: 16px;
 	height: 16px;
-	margin-right: 2px;
 	margin-top: 3px;
 }
 
-.ratingText {
-	margin-left: 8px;
-	font-size: 14px;
-	font-weight: 500;
-	color: #101010;
-	margin-top: 3px;
+.listMenuContent {
+	padding: 10px;
 }
 
-.menuDesc {
-	font-size: 15px;
-	color: #717171;
-	margin-top: -2px;
+.listMenuTitle {
+	margin-right: -5px;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 0px;
 }
 
-.categoryContainer {
-	background-color: #f5f5f5;
-	width: 76px;
-	height: 24px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 1px solid #f5f5f5;
-	border-radius: 2px;
-	margin-right: 11px;
-}
-
-.categoryText {
-	font-size: 12px;
-	color: #535353;
-}
-
-.secondCategoryText {
-	font-size: 14px;
-}
-
-.selectedSecondCategoryText {
-	font-size: 14px;
-	color: #189243;
-}
-
-.underlineBox {
-	width: 25px;
-	height: 2px;
-	background-color: #1dcf5c;
-	margin-top: -10px;
-}
-
-.day {
-	font-size: 15px;
-}
-
-.bottomMenu1 {
-	width: 169px;
-	height: 99px;
-	margin-top: -5px;
-	border-radius: 4px;
-}
-
-.bottomFoodContainer {
-	margin-right: 15px;
-}
-
-.bottomFoodTitle {
-	font-size: 15px;
-	width: 161px;
-	margin-top: 14px;
-}
-
-.snackContainer {
-	width: 169px;
-	height: 99px;
-	display: flex;
-	margin-top: -5px;
-	align-items: center;
-	justify-content: center;
-	border: 1px dotted #d3d3d3;
-}
-
-.bigPlus {
-	font-size: 30px;
-	margin-top: 28px;
-}
-
-.bigPlusContainer {
-	width: 34px;
-	height: 34px;
-	background-color: #e9e9e9;
-	border: 1px solid transparent;
-	border-radius: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.priceContainer {
-	display: flex;
-	justify-content: end;
-	align-items: center;
-	margin-top: 35px;
-}
-
-.bookmarkIcon {
-	width: 14px;
-	height: 18px;
-}
-
-.priceText {
-	margin-right: 25px;
-}
-
-.bookmarkContainer {
-	width: 49px;
-	height: 48px;
-	border: 1px solid #d3d3d3;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
-
-.addCartContainer {
-	display: flex;
-	width: 144px;
-	height: 48px;
-	border: 1px solid #d3d3d3;
-	align-items: center;
-	justify-content: center;
-	border-radius: 5px;
-}
-
-.priceCartIcon {
-	width: 26px;
-	height: 26px;
-	margin-right: 9px;
-}
-
-.sidebarContainer {
-	width: 329px;
-	height: 155px;
-	background-color: #ffffff;
-	margin-left: 30px;
-	display: flex;
-}
-
-.pastaImage {
-	width: 108px;
-	height: 125px;
-	padding: 15px;
-}
-
-.judulMakananSideBar {
-	font-size: 18px;
-}
-
-.containerIconClock {
-	display: flex;
-	margin-right: 21px;
-}
-
-.sideBarSmallText {
-	font-size: 12px;
-	margin-top: -2px;
-}
-
-.sideBarAddCartContainer {
-	display: flex;
-	width: 121px;
-	height: 38px;
-	border: 1px solid #d3d3d3;
-	align-items: center;
-	justify-content: center;
-	border-radius: 4px;
-}
-
-.sideBarPriceCartIcon {
-	width: 20px;
-	height: 20px;
-	margin-right: 3px;
-}
-
-.addCartText {
-	font-size: 17px;
-}
-
-.sideBarAddCartText {
-	font-size: 14px;
-}
-
-.sidebarContainer2 {
-	width: 329px;
-	height: 155px;
-	background-color: #ffffff;
-	margin-left: 30px;
-	margin-top: 35px;
-	display: flex;
-}
-
-.sidebarContainer3 {
-	width: 329px;
-	height: 155px;
-	background-color: #ffffff;
-	margin-left: 30px;
-	margin-top: 35px;
-	display: flex;
-}
-
-.sideBarCountingBox {
-	display: flex;
-	width: 121px;
-	height: 38px;
-	border: 1px solid #d3d3d3;
-	align-items: center;
-	justify-content: center;
-	border-radius: 4px;
-}
-
-.numberCountingText {
-	font-size: 16px;
-}
-
-.numberCountingTextContainer {
-	width: 34px;
-	background-color: #e9ebef;
-	height: 38px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 16px;
-	margin-left: 16px;
+.listMenuDesc {
+	color: #7c7c7c;
 }
