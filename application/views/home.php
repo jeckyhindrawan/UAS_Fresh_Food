@@ -38,9 +38,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <input class="search-txt" type="text" name="" placeholder="Type to search">
                             <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
                         </div>
-                        <div class="userIconContainer">
+                        <!-- <div class="box"> -->
+                        <div class="dropdown">
+                            <span class="num">2</span>
                             <img src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon" class="userIcon">
+                            <button class="dropdown-contents">
+                                <li><span class="dropdown-isi">Your Payment Has Been Successful</span></li>
+                                <li><span class="dropdown-isi">Your order has been successfully ordered</span>
+                                </li>
+                            </button>
                         </div>
+                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="topBar">
@@ -57,21 +65,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <?php
                 foreach ($food_details as $fd) {
                 ?>
-                    <a class="listMenu" href="<?php echo base_url() . 'home/food_details/' . $fd->id; ?>">
-                        <img class=" listMenuImage" src="http://localhost/freshfood/assets/images/<?php echo $fd->id ?>.png" alt="image">
-                        <div class="listMenuContent">
-                            <div class="bigMenu">
-                                <?php
+                <a class="listMenu" href="<?php echo base_url() . 'home/food_details/' . $fd->id; ?>">
+                    <img class=" listMenuImage" src="http://localhost/freshfood/assets/images/<?php echo $fd->id ?>.png"
+                        alt="image">
+                    <div class="listMenuContent">
+                        <div class="bigMenu">
+                            <?php
                                 for ($i = 0; $i < $fd->rating; $i++) {
                                 ?>
-                                    <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                                <?php } ?>
-                            </div>
-                            <p class="listMenuTitle"><?php echo $fd->title ?></p>
-                            <p class="listMenuDesc"><?php echo $fd->description ?></p>
-                            <p class="listMenuPrice">$<?php echo $fd->price ?></p>
+                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                            <?php } ?>
                         </div>
-                    </a>
+                        <p class="listMenuTitle"><?php echo $fd->title ?></p>
+                        <p class="listMenuDesc"><?php echo $fd->description ?></p>
+                        <p class="listMenuPrice">$<?php echo $fd->price ?></p>
+                    </div>
+                </a>
                 <?php } ?>
             </div>
         </div>

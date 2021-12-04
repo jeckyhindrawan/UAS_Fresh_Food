@@ -21,7 +21,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <h2 class="title">Sign In</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username" required value="<?= set_value('username'); ?>" />
+                        <input type="text" placeholder="Username" name="username" required
+                            value="<?= set_value('username'); ?>" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
