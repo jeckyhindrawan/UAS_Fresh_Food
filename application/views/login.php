@@ -28,13 +28,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <input type="password" placeholder="Password" name="password" required />
                     </div>
                     <input type="submit" class="btn solid" value="Login" />
-                    <button class="btnSignup" href="/aplication/views/signup.php">Or Sign Up Now</button>
-
-
-
                 </form>
+                <a class="btnSignup" href="<?php echo base_url() . 'signup'; ?>">Or Sign Up Now</a>
             </div>
-
         </div>
     </div>
 </body>

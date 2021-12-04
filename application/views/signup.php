@@ -17,23 +17,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="container">
         <div class="forms-container">
             <div class="signup-signup">
-                <form action="#" class="sign-up-form">
+                <form action="<?= base_url() . 'signup/actionSignup' ?>" class="sign-up-form" method="post">
                     <h2 class="title">Sign Up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username" />
+                        <input type="text" placeholder="Username" name="username" required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email">
+                        <input type="email" placeholder="Email" name="email" required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password" />
+                        <input type="password" placeholder="Password" name="password" required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirmation Password" name="password2" />
+                        <input type="password" placeholder="Confirmation Password" name="password2" required />
+                    </div>
+                    <div>
+
                     </div>
                     <input type="submit" class="btn solid" value="register" />
             </div>
