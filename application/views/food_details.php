@@ -132,19 +132,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon"
                                 class="sideBarPriceCartIcon">
                             <p class="sideBarAddCartText">Add Cart</p>
+                            </button>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
                     }
                     if ($count == 3) {
                         break;
                     }
                 }
                 ?>
+                </div>
             </div>
         </div>
-    </div>
 
 </body>
 
