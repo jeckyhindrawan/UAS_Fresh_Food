@@ -250,3 +250,40 @@ body {
 .listMenuDesc {
 	color: #7c7c7c;
 }
+
+.dropdown-content {
+	display: flex;
+	align-items: center;
+	visibility: hidden;
+	flex-direction: column;
+	position: absolute;
+	background-color: white;
+	min-width: 100px;
+	padding: 12px 16px;
+	border: 1px solid #d3d3d3;
+	z-index: 1;
+	top: 48px;
+}
+
+.dropdown-menu {
+	text-decoration: none;
+	margin: 5px;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #d3d3d3;
+	border-radius: 8px;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: flex;
+	visibility: visible;
+}

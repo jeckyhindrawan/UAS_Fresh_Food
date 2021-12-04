@@ -28,19 +28,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <p>Your Cart (0)</p>
                         </div>
                         <div class="dropdown">
-                            <button class="mainmenubtn">
-                                <img src="http://localhost/freshfood/assets/images/user.png" alt="icon" class="userIcon">
-                            </button>
-                            <button class="dropdown-child">
-                                <a href="">Profile</a>
-                                <a href="">Log Out</a>
+                            <img src="http://localhost/freshfood/assets/images/user.png" alt="icon" class="userIcon">
+                            <button class="dropdown-content">
+                                <a class="dropdown-menu" href="">Profile</a>
+                                <a class="dropdown-menu" href="">Log Out</a>
                             </button>
                         </div>
                         <div class="search-box">
                             <input class="search-txt" type="text" name="" placeholder="Type to search">
                             <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
                         </div>
-                        <div class="box">
+                        <div class="userIconContainer">
                             <img src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon" class="userIcon">
                         </div>
                     </div>
