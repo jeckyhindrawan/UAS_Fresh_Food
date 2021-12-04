@@ -30,13 +30,13 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $this->load->view('home');
+        $data['food_details'] = $this->food_details_model->tampil_data()->result();
+        $data['categories'] = $this->categories->tampil_data()->result();
+        $this->load->view('home', $data);
     }
 
     public function food_details()
     {
-        $data['food_details'] = $this->food_details_model->tampil_data()->result();
-        $data['categories'] = $this->categories->tampil_data()->result();
-        $this->load->view('food_details', $data);
+        $this->load->view('food_details');
     }
 }

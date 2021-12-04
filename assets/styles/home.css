@@ -185,15 +185,16 @@ body {
 
 .ListMenuContainer {
 	display: flex;
-	margin-bottom: 30px;
+	flex-wrap: wrap;
 }
 
 .listMenu {
-	width: 320px;
+	width: 310px;
 	border: 1px solid #cdcccc;
 	border-radius: 15px;
 	background-color: white;
 	margin-right: 20px;
+	margin-bottom: 30px;
 }
 
 .listMenu:hover {

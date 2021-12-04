@@ -46,149 +46,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="bottomMenuList">Weight Loss</p>
                         <p class="bottomMenuList">Weight Gain</p>
                     </div>
-                    <!-- <div class="rightMenu">
-                        <div class="leafIconContainer">
-                            <img src="http://localhost/freshfood/assets/images/leaf.png" alt="icon" class="leafIcon">
-                            <p>Dietary</p>
-                        </div>
-                        <div class="bookIconContainer">
-                            <img src="http://localhost/freshfood/assets/images/book.png" alt="icon" class="leafIcon">
-                            <p>Calories</p>
-                        </div>
-                        <div class="sortContainer">
-                            <p>Sort by: <strong>Recommended</strong>
-                            </p>
-                            <img src="http://localhost/freshfood/assets/images/chevron-down.png" alt="icon"
-                                class="downIcon">
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
         <div class="mainContainer">
             <div class="ListMenuContainer">
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                <?php
+                foreach ($food_details as $fd) {
+                ?>
+                    <div class="listMenu">
+                        <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
+                        <div class="listMenuContent">
+                            <div class="bigMenu">
+                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                                <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                            </div>
+                            <p class="listMenuTitle"><?php echo $fd->title ?></p>
+                            <p class="listMenuDesc"><?php echo $fd->description ?></p>
+                            <p class="listMenuTitle">$<?php echo $fd->price ?></p>
                         </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
                     </div>
-                </div>
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                        </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
-                    </div>
-                </div>
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                        </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
-                    </div>
-                </div>
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                        </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
-                    </div>
-                </div>
-            </div>
-            <div class="ListMenuContainer">
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                        </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
-                    </div>
-                </div>
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                        </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
-                    </div>
-                </div>
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                        </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
-                    </div>
-                </div>
-                <div class="listMenu">
-                    <img class="listMenuImage" src="http://localhost/freshfood/assets/images/friedrice.png" alt="image">
-                    <div class="listMenuContent">
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                        </div>
-                        <p class="listMenuTitle">New York-Style Pizza</p>
-                        <p class="listMenuDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.!</p>
-                        <p class="listMenuTitle">$7.10</p>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
