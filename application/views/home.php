@@ -69,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <p class="listMenuPrice">$<?php echo $fd->price ?></p>
                         </div>
                     </div>
-                <?php } ?>
+                <?php } ?> 
             </div>
         </div>
     </div>

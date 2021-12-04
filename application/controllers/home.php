@@ -35,8 +35,13 @@ class Home extends CI_Controller
         $this->load->view('home', $data);
     }
 
-    public function food_details()
-    {
-        $this->load->view('food_details');
+    public function food_details($id)
+    { 
+        $where = array('id' => $id);
+        $data['All_food_details'] = $this->food_details_model->tampil_data()->result();
+        $data['food_details'] = $this->food_details_model->getWhere($where, 'tbl_food_details')->result();
+        $data['categories'] = $this->categories->tampil_data()->result(); 
+        $this->load->view('food_details', $data);
     }
+
 }
