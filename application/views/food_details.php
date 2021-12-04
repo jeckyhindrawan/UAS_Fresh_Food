@@ -55,94 +55,85 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <?php
                 foreach ($food_details as $fd) {
                 ?>
-                <div class="bigMenu">
-                    <img src="http://localhost/freshfood/assets/images/<?= $fd->id ?>.png" alt="image"
-                        class="chickenImage">
-                    <div>
-                        <p class="menuTitle"><strong><?php echo $fd->title ?></strong></p>
-                        <p class="caloriesDaysText"><?php echo $fd->subtitle ?></p>
-                        <div class="bigMenu">
-                            <div class="containerIconLonceng">
-                                <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
-                                    class="iconLoncengKecil">
-                                <p class="smallText"><?php echo $fd->meals ?> Meals</p>
+                    <div class="bigMenu">
+                        <img src="http://localhost/freshfood/assets/images/<?= $fd->id ?>.png" alt="image" class="chickenImage">
+                        <div>
+                            <p class="menuTitle"><strong><?php echo $fd->title ?></strong></p>
+                            <p class="caloriesDaysText"><?php echo $fd->subtitle ?></p>
+                            <div class="bigMenu">
+                                <div class="containerIconLonceng">
+                                    <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon" class="iconLoncengKecil">
+                                    <p class="smallText"><?php echo $fd->meals ?> Meals</p>
+                                </div>
+                                <div class="containerIconLonceng">
+                                    <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon" class="clockIcon">
+                                    <p class="smallText"><?php echo $fd->days ?> Days</p>
+                                </div>
                             </div>
-                            <div class="containerIconLonceng">
-                                <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
-                                    class="clockIcon">
-                                <p class="smallText"><?php echo $fd->days ?> Days</p>
+                            <div class="bigMenu">
+                                <?php
+                                for ($i = 0; $i < $fd->rating; $i++) {
+                                ?>
+                                    <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                                <?php } ?>
                             </div>
-                        </div>
-                        <div class="bigMenu">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
-                            <p class="ratingText"><?php echo $fd->rating ?></p>
-                        </div>
-                        <p class="menuDesc"><?php echo $fd->description ?></p>
-                        <div class="bigMenu">
-                            <?php
+                            <p class="menuDesc"><?php echo $fd->description ?></p>
+                            <div class="bigMenu">
+                                <?php
                                 foreach ($categories as $c) {
                                 ?>
-                            <div class="categoryContainer">
-                                <p class="categoryText"><?php echo $c->name ?></p>
+                                    <div class="categoryContainer">
+                                        <p class="categoryText"><?php echo $c->name ?></p>
+                                    </div>
+                                <?php } ?>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
-                </div>
-                <div class="priceContainer">
-                    <p class="priceText"><strong>$<?= $fd->price ?></strong></p>
-                    <div class="addCartContainer">
-                        <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="priceCartIcon">
-                        <p class="addCartText">Add Cart</p>
+                    <div class="priceContainer">
+                        <p class="priceText"><strong>$<?= $fd->price ?></strong></p>
+                        <div class="addCartContainer">
+                            <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="priceCartIcon">
+                            <p class="addCartText">Add Cart</p>
+                        </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
             <!-- sidebar -->
-            <div>
+            <div class="sidebarContainer">
                 <?php
                 $count = 0;
                 foreach ($All_food_details as $afd) {
                     if ($afd->id != $food_details[0]->id) {
                         $count++;
                 ?>
-                <div class="sidebarContainer">
-                    <img src="http://localhost/freshfood/assets/images/<?= $afd->id ?>.png" alt="imageMenu"
-                        class="pastaImage">
-                    <div>
-                        <p class="judulMakananSideBar"><strong><?= $afd->title ?>
-                                Blondie</strong></p>
-                        <div class="bigMenu">
-                            <div class="containerIconClock">
-                                <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
-                                    class="iconLoncengKecil">
-                                <p class="sideBarSmallText"><?= $afd->meals ?> Meals</p>
-                            </div>
-                            <div class="containerIconClock">
-                                <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
-                                    class="clockIcon">
-                                <p class="sideBarSmallText"><?= $afd->days ?> Days</p>
+                        <div class="sideBarMenu">
+                            <img src="http://localhost/freshfood/assets/images/<?= $afd->id ?>.png" alt="imageMenu" class="pastaImage">
+                            <div>
+                                <p class="judulMakananSideBar"><strong><?= $afd->title ?></strong></p>
+                                <div class="bigMenu">
+                                    <div class="containerIconClock">
+                                        <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon" class="iconLoncengKecil">
+                                        <p class="sideBarSmallText"><?= $afd->meals ?> Meals</p>
+                                    </div>
+                                    <div class="containerIconClock">
+                                        <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon" class="clockIcon">
+                                        <p class="sideBarSmallText"><?= $afd->days ?> Days</p>
+                                    </div>
+                                </div>
+                                <div class="sideBarAddCartContainer">
+                                    <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="sideBarPriceCartIcon">
+                                    <p class="sideBarAddCartText">Add Cart</p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="sideBarAddCartContainer">
-                            <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon"
-                                class="sideBarPriceCartIcon">
-                            <p class="sideBarAddCartText">Add Cart</p>
-                            </button>
-                        </div>
-                    </div>
-                    <?php
+                <?php
                     }
                     if ($count == 3) {
                         break;
                     }
                 }
                 ?>
-                </div>
             </div>
         </div>
 
