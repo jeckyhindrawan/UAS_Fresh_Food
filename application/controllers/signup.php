@@ -42,8 +42,7 @@ class signup extends CI_Controller
         );
 
         $user = $this->m_signup->getUser($where1, $where2, 'tbl_user')->row_array();
-
-
+ 
         if ($user) {
             redirect('signup');
         } else {
