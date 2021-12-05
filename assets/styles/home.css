@@ -93,8 +93,8 @@ body {
 .search-box {
 	border: 1px solid #d3d3d3;
 	border-radius: 8px;
-	width: 44px;
-	height: 44px;
+	width: 43px;
+	height: 43px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -251,20 +251,6 @@ body {
 	color: #7c7c7c;
 }
 
-.dropdown-content {
-	display: flex;
-	align-items: center;
-	visibility: hidden;
-	flex-direction: column;
-	position: absolute;
-	background-color: white;
-	min-width: 100px;
-	padding: 12px 16px;
-	border: 1px solid #d3d3d3;
-	z-index: 1;
-	top: 48px;
-}
-
 .dropdown-content-notif {
 	display: flex;
 	align-items: center;
@@ -285,28 +271,6 @@ body {
 	margin: 5px;
 }
 
-.dropdown {
-	position: relative;
-	display: inline-block;
-	border: 1px solid #d3d3d3;
-	border-radius: 8px;
-	width: 44px;
-	height: 44px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 20px;
-}
-
-.dropdown:hover .dropdown-content {
-	display: flex;
-	visibility: visible;
-}
-
-.dropdown:hover {
-	background-color: #aaa;
-}
-
 .dropdown-contents {
 	display: flex;
 	align-items: center;
@@ -322,11 +286,6 @@ body {
 	z-index: 1;
 	top: 48px;
 	right: 0px;
-}
-
-.dropdown:hover .dropdown-contents {
-	display: flex;
-	visibility: visible;
 }
 
 .dropdown-isi {
@@ -346,4 +305,53 @@ body {
 	line-height: 25px;
 	font-family: sans-serif;
 	text-align: center;
+}
+
+.dropbtn {
+	background-color: white;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	border: 1px solid #d3d3d3;
+	border-radius: 8px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+	background-color: #aaa;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown a:hover {
+	background-color: #ddd;
+}
+
+.show {
+	display: block;
 }
