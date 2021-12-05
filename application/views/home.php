@@ -36,9 +36,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="topBar">
                     <div class="leftMenu">
                         <img src="http://localhost/freshfood/assets/images/Logo.png" alt="logo" class="logo">
-                        <?php foreach ($HeaderMenu as $hm) { ?>
-                        <p class=" <?= $hm->class ?>"><?= $hm->title ?></p>
-                        <?php } ?>
+                        <p class="selectedMenu">Menu</p>
+                        <p class="menuList">About</p>
+                        <p class="menuList">Contact</p>
                     </div>
                     <div class="rightMenu">
 
@@ -74,8 +74,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="topBar">
                     <div class="bottomLeftMenu">
                         <p class="bottomSelectedMenu">All</p>
-                        <p class="bottomMenuList">Weight Loss</p>
-                        <p class="bottomMenuList">Weight Gain</p>
+                        <?php
+                        $count = 0;
+                        foreach ($Categories as $c) {
+                            $count++; ?>
+
+                        <p class="bottomMenuList"><?= $c->name ?></p>
+                        <?php
+                            if ($count == 2) {
+                                break;
+                            }
+                        } ?>
                     </div>
                 </div>
             </div>

@@ -23,6 +23,12 @@ class m_data extends CI_Model
         return $this->db->get($table);
     }
 
+    function getDistinct($table)
+    {
+        $this->db->distinct();
+        return $this->db->get($table);
+    }
+
     function inputUser($data, $table)
     {
         $this->db->insert($table, $data);
