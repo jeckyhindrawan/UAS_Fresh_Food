@@ -114,6 +114,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
             <!-- sidebar -->
             <?php
+            if (count($food_details) == 0) {
+                redirect(base_url() . 'home');
+            }
             $count = 0;
             $temp = "";
             for ($x = 0; $x < 3; $x++) {
