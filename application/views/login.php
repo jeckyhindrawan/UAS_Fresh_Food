@@ -10,14 +10,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <title>Login Page</title>
-    <link rel="stylesheet" href="http://localhost/freshfood/assets/styles/login.css">
+    <link rel="stylesheet" href="<?= base_url()  . "/assets/styles/login.css" ?>">
 </head>
 
 <body>
+
     <div class="container">
+        <?= base_url() ?>
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="<?php echo base_url() . 'login/actionLogin' ?>" class="sign-in-form" method="POST">
+                <form action="<?= base_url() . 'login/actionLogin' ?>" class="sign-in-form" method="POST">
                     <h2 class="title">Sign In</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -30,7 +32,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <input type="submit" class="btn solid" value="Login" />
                 </form>
-                <a class="btnSignup" href="<?php echo base_url() . 'signup'; ?>">Or Sign Up Now</a>
+                <a class="btnSignup" href="<?= base_url() . 'signup'; ?>">Or Sign Up Now</a>
             </div>
         </div>
     </div>

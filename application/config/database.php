@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -75,12 +75,13 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => '192.168.100.2',
-	// 'username' => 'root',
-	// 'password' => '',
-	'hostname' => 'sql6.freemysqlhosting.net',
-	'username' => 'sql6455752',
-	'password' => 'WnxmeYrTGe', 
+	'hostname' => '192.168.100.16',
+	// 'hostname' => 'Localhost',
+	'username' => 'root',
+	'password' => '',
+	// 'hostname' => 'sql6.freemysqlhosting.net',
+	// 'username' => 'sql6455752',
+	// 'password' => 'WnxmeYrTGe', 
 	'database' => 'sql6455752',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

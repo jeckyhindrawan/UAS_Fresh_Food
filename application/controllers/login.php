@@ -7,32 +7,33 @@ class Login extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_login');  
+        $this->load->model('m_data');
     }
 
     public function index()
     {
-        $this->load->view('login'); 
+        $this->load->view('login');
     }
 
-    public function actionLogin(){ 
+    public function actionLogin()
+    {
 
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $where  = array('username'=> $username);
-        $user = $this->m_login->getUser($where,'tbl_user')->row_array();
-        
+
+        $where  = array('username' => $username);
+        $user = $this->m_data->getWhere($where, 'tbl_user')->row_array();
+
         if ($user) {
-            if($user['password'] === md5($password)){
-                $data = ['id'=>$user['id'],'username'=>$user['username']];
+            if ($user['password'] === md5($password)) {
+                $data = ['id' => $user['id'], 'username' => $user['username']];
                 $this->session->set_userdata($data);
                 redirect('home');
-            }else{
+            } else {
                 redirect('login');
             }
-        }else{
+        } else {
             redirect('login');
         }
     }
-
 }

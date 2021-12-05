@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta charset="utf-8">
     <title>Fresh Food | Food Details</title>
 
-    <link rel="stylesheet" href="http://localhost/freshfood/assets/styles/food_details.css">
+    <link rel="stylesheet" href="<?= base_url() . '/assets/styles/food_details.css' ?>">
 
 </head>
 
@@ -18,7 +18,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="menuBar">
                 <div class="topBar">
                     <div class="leftMenu">
-                        <img src="http://localhost/freshfood/assets/images/Logo.png" alt="logo" class="logo">
+                        <a href="<?= base_url() . 'home' ?>">
+                            <img src="http://localhost/freshfood/assets/images/Logo.png" alt="logo" class="logo">
+                        </a>
                         <p class="selectedMenu">Menu</p>
                         <p class="menuList">About</p>
                         <p class="menuList">Contact</p>
@@ -59,18 +61,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <img src="http://localhost/freshfood/assets/images/<?= $fd->id ?>.png" alt="image"
                         class="chickenImage">
                     <div>
-                        <p class="menuTitle"><strong><?php echo $fd->title ?></strong></p>
-                        <p class="caloriesDaysText"><?php echo $fd->subtitle ?></p>
+                        <p class="menuTitle"><strong><?= $fd->title ?></strong></p>
+                        <p class="caloriesDaysText"><?= $fd->subtitle ?></p>
                         <div class="bigMenu">
                             <div class="containerIconLonceng">
                                 <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
                                     class="iconLoncengKecil">
-                                <p class="smallText"><?php echo $fd->meals ?> Meals</p>
+                                <p class="smallText"><?= $fd->meals ?> Meals</p>
                             </div>
                             <div class="containerIconLonceng">
                                 <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
                                     class="clockIcon">
-                                <p class="smallText"><?php echo $fd->days ?> Days</p>
+                                <p class="smallText"><?= $fd->days ?> Days</p>
                             </div>
                         </div>
                         <div class="bigMenu">
@@ -80,13 +82,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
                             <?php } ?>
                         </div>
-                        <p class="menuDesc"><?php echo $fd->description ?></p>
+                        <p class="menuDesc"><?= $fd->description ?></p>
                         <div class="bigMenu">
                             <?php
                                 foreach ($categories as $c) {
                                 ?>
                             <div class="categoryContainer">
-                                <p class="categoryText"><?php echo $c->name ?></p>
+                                <p class="categoryText"><?= $c->name ?></p>
                             </div>
                             <?php } ?>
                         </div>
@@ -104,36 +106,42 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <!-- sidebar -->
             <div class="sidebarContainer">
                 <?php
-                $count = 0;
+                if (count($food_details) == 0) {
+                    redirect(base_url() . 'home');
+                } else
+                    $count = 0;
+                $tempNumber = "";
                 foreach ($All_food_details as $afd) {
+                    $randomNumber = rand();
                     if ($afd->id != $food_details[0]->id) {
                         $count++;
                 ?>
-                <div class="sideBarMenu">
-                    <img src="http://localhost/freshfood/assets/images/<?= $afd->id ?>.png" alt="imageMenu"
-                        class="pastaImage">
-                    <div>
-                        <p class="judulMakananSideBar"><strong><?= $afd->title ?></strong></p>
-                        <div class="bigMenu">
-                            <div class="containerIconClock">
-                                <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
-                                    class="iconLoncengKecil">
-                                <p class="sideBarSmallText"><?= $afd->meals ?> Meals</p>
+                <a class="sideBarMenuContainer" href="<?= base_url() . 'home/food_details/' . $afd->id; ?>">
+                    <div class="sideBarMenu">
+                        <img src="http://localhost/freshfood/assets/images/<?= $afd->id ?>.png" alt="imageMenu"
+                            class="pastaImage">
+                        <div className="subMenuDescContainer">
+                            <p class="judulMakananSideBar"><strong><?= $afd->title ?></strong></p>
+                            <?php
+                                    for ($i = 0; $i < $fd->rating; $i++) {
+                                    ?>
+                            <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
+                            <?php } ?>
+                            <div class="bigMenu">
+                                <div class="containerIconClock">
+                                    <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
+                                        class="iconLoncengKecil">
+                                    <p class="sideBarSmallText"><?= $afd->meals ?> Meals</p>
+                                </div>
+                                <div class="containerIconClock">
+                                    <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
+                                        class="clockIcon">
+                                    <p class="sideBarSmallText"><?= $afd->days ?> Days</p>
+                                </div>
                             </div>
-                            <div class="containerIconClock">
-                                <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
-                                    class="clockIcon">
-                                <p class="sideBarSmallText"><?= $afd->days ?> Days</p>
-                            </div>
-                        </div>
-                        <div class="sideBarAddCartContainer">
-                            <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon"
-                                class="sideBarPriceCartIcon">
-                            <p class="sideBarAddCartText">Add Cart</p>
-                            </button>
                         </div>
                     </div>
-                </div>
+                </a>
                 <?php
                     }
                     if ($count == 3) {
@@ -143,7 +151,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 ?>
             </div>
         </div>
-
 </body>
 
 </html>

@@ -7,7 +7,7 @@ class signup extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_signup');
+        $this->load->model('m_data');
     }
 
     public function index()
@@ -41,12 +41,12 @@ class signup extends CI_Controller
             'email' => $email,
         );
 
-        $user = $this->m_signup->getUser($where1, $where2, 'tbl_user')->row_array();
- 
+        $user = $this->m_data->getOrLike($where1, $where2, 'tbl_user')->row_array();
+
         if ($user) {
             redirect('signup');
         } else {
-            $this->m_signup->inputUser($data, 'tbl_user');
+            $this->m_data->inputUser($data, 'tbl_user');
             redirect('login');
         };
     }

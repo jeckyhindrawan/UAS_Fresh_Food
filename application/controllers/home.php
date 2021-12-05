@@ -23,25 +23,24 @@ class Home extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('food_details_model');
-        $this->load->model('categories');
+        $this->load->model('m_data');
+
         isLoggedIn();
     }
 
     public function index()
     {
-        $data['food_details'] = $this->food_details_model->tampil_data()->result();
-        $data['categories'] = $this->categories->tampil_data()->result();
+        $data['food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
+        $data['HeaderMenu'] = $this->m_data->getTableData('tbl_header_menu')->result();
         $this->load->view('home', $data);
     }
 
     public function food_details($id)
-    { 
+    {
         $where = array('id' => $id);
-        $data['All_food_details'] = $this->food_details_model->tampil_data()->result();
-        $data['food_details'] = $this->food_details_model->getWhere($where, 'tbl_food_details')->result();
-        $data['categories'] = $this->categories->tampil_data()->result(); 
+        $data['All_food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
+        $data['food_details'] = $this->m_data->getWhere($where, 'tbl_food_details')->result();
+        $data['categories'] = $this->m_data->getWhere($where, 'tbl_categories')->result();
         $this->load->view('food_details', $data);
     }
-
 }

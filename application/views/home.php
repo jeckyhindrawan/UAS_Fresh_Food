@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <title>Fresh Food | Home</title>
-    <link rel="stylesheet" href="http://localhost/freshfood/assets/styles/home.css">
+    <link rel="stylesheet" href="<?= base_url() . '/assets/styles/home.css' ?>">
 </head>
 
 <body>
@@ -17,9 +17,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="topBar">
                     <div class="leftMenu">
                         <img src="http://localhost/freshfood/assets/images/Logo.png" alt="logo" class="logo">
-                        <p class="selectedMenu">Menu</p>
-                        <p class="menuList">About</p>
-                        <p class="menuList">Contact</p>
+                        <?php foreach ($HeaderMenu as $hm) { ?>
+                        <p class=" <?= $hm->class ?>"><?= $hm->title ?></p>
+                        <?php } ?>
                     </div>
                     <div class="rightMenu">
 
@@ -30,8 +30,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="dropdown">
                             <img src="http://localhost/freshfood/assets/images/user.png" alt="icon" class="userIcon">
                             <button class="dropdown-content">
-                                <a class="dropdown-menu" href="">Profile</a>
-                                <a class="dropdown-menu" href="">Log Out</a>
+                                <a class="dropdown-menu" href="<?= base_url() . 'profil' ?>">Profile</a>
+                                <a class="dropdown-menu" href="<?= base_url() . 'logout' ?>">Log Out</a>
                             </button>
                         </div>
                         <div class="search-box">
