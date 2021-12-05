@@ -418,10 +418,6 @@ body {
 
 .judulMakananSideBar {
 	font-size: 18px;
-	white-space: nowrap;
-	overflow: hidden;
-	display: block;
-	text-overflow: ellipsis;
 }
 
 .containerIconClock {
