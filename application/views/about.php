@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <title>Fresh Food | About</title>
-    <link rel="stylesheet" href="http://localhost/freshfood/assets/styles/home.css">
+    <link rel="stylesheet" href="http://localhost/freshfood/assets/styles/about.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 </head>
 
@@ -31,6 +31,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="button">
                     <a href="">Read More</a>
                 </div>
+                <div class="social">
+                    <class= href=""><i class="fab fa-facebook-f"></i></a>
+                        <class= href=""><i class="fab fa-twitter"></i></a>
+                            <class= href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="http://localhost/freshfood/assets/images/logo.png">
             </div>
         </div>
+
     </div>
+</body>
+
+</html>

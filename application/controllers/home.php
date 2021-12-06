@@ -30,17 +30,19 @@ class Home extends CI_Controller
 
     public function index()
     {
+        $data['Categories'] = $this->m_data->getDistinct('tbl_categories')->result();
         $data['food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
-        $data['HeaderMenu'] = $this->m_data->getTableData('tbl_header_menu')->result();
         $this->load->view('home', $data);
     }
 
     public function food_details($id)
     {
-        $where = array('id' => $id);
+        $whereFoodDetails = array('id' => $id);
+        $whereCategories = array('id_food' => $id);
         $data['All_food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
-        $data['food_details'] = $this->m_data->getWhere($where, 'tbl_food_details')->result();
-        $data['categories'] = $this->m_data->getWhere($where, 'tbl_categories')->result();
+        $data['All_Categories'] = $this->m_data->getDistinct('tbl_categories')->result();
+        $data['food_details'] = $this->m_data->getWhere($whereFoodDetails, 'tbl_food_details')->result();
+        $data['categories'] = $this->m_data->getWhere($whereCategories, 'tbl_categories')->result();
         $this->load->view('food_details', $data);
     }
 }

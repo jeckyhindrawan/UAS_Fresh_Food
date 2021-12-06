@@ -46,8 +46,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="topBar">
                     <div class="bottomLeftMenu">
                         <p class="bottomSelectedMenu">All</p>
-                        <p class="bottomMenuList">Weight Loss</p>
-                        <p class="bottomMenuList">Weight Gain</p>
+                        <?php
+                        $count = 0;
+                        foreach ($All_Categories as $c) {
+                            $count++; ?>
+
+                        <p class="bottomMenuList"><?= $c->name ?></p>
+                        <?php
+                            if ($count == 2) {
+                                break;
+                            }
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -104,52 +113,50 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <?php } ?>
             </div>
             <!-- sidebar -->
+            <?php
+            if (count($food_details) == 0) {
+                redirect(base_url() . 'home');
+            }
+            $count = 0;
+            $temp = "";
+            for ($x = 0; $x < 3; $x++) {
+                do {
+                    $randomNumber = rand(0, count($All_food_details) - 1);
+                } while (strpos($temp, $randomNumber) == true || $randomNumber == $food_details['0']->id);
+                $temp = "$temp|$randomNumber";
+            ?>
             <div class="sidebarContainer">
-                <?php
-                if (count($food_details) == 0) {
-                    redirect(base_url() . 'home');
-                } else
-                    $count = 0;
-                $tempNumber = "";
-                foreach ($All_food_details as $afd) {
-                    $randomNumber = rand();
-                    if ($afd->id != $food_details[0]->id) {
-                        $count++;
-                ?>
-                <a class="sideBarMenuContainer" href="<?= base_url() . 'home/food_details/' . $afd->id; ?>">
+                <a class="sideBarMenuContainer"
+                    href="<?= base_url() . 'home/food_details/' . $All_food_details[$randomNumber]->id; ?>">
                     <div class="sideBarMenu">
-                        <img src="http://localhost/freshfood/assets/images/<?= $afd->id ?>.png" alt="imageMenu"
-                            class="pastaImage">
+                        <img src="http://localhost/freshfood/assets/images/<?= $All_food_details[$randomNumber]->id ?>.png"
+                            alt="imageMenu" class="pastaImage">
                         <div className="subMenuDescContainer">
-                            <p class="judulMakananSideBar"><strong><?= $afd->title ?></strong></p>
+                            <p class="judulMakananSideBar">
+                                <strong><?= $All_food_details[$randomNumber]->title ?></strong>
+                            </p>
                             <?php
-                                    for ($i = 0; $i < $fd->rating; $i++) {
-                                    ?>
+                                for ($i = 0; $i < $fd->rating; $i++) {
+                                ?>
                             <img src="http://localhost/freshfood/assets/images/star.png" alt="icon" class="starIcon">
                             <?php } ?>
                             <div class="bigMenu">
                                 <div class="containerIconClock">
                                     <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
                                         class="iconLoncengKecil">
-                                    <p class="sideBarSmallText"><?= $afd->meals ?> Meals</p>
+                                    <p class="sideBarSmallText"><?= $All_food_details[$randomNumber]->meals ?> Meals</p>
                                 </div>
                                 <div class="containerIconClock">
                                     <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
                                         class="clockIcon">
-                                    <p class="sideBarSmallText"><?= $afd->days ?> Days</p>
+                                    <p class="sideBarSmallText"><?= $All_food_details[$randomNumber]->days ?> Days</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a>
-                <?php
-                    }
-                    if ($count == 3) {
-                        break;
-                    }
-                }
-                ?>
             </div>
+            <?php } ?>
         </div>
 </body>
 
