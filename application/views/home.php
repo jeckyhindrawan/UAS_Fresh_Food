@@ -11,15 +11,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
+    <script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    </script>
+
     <div class="container">
         <div class="header">
             <div class="menuBar">
                 <div class="topBar">
                     <div class="leftMenu">
                         <img src="http://localhost/freshfood/assets/images/Logo.png" alt="logo" class="logo">
-                        <?php foreach ($HeaderMenu as $hm) { ?>
-                        <p class=" <?= $hm->class ?>"><?= $hm->title ?></p>
-                        <?php } ?>
+                        <p class="selectedMenu">Menu</p>
+                        <p class="menuList">About</p>
+                        <p class="menuList">Contact</p>
                     </div>
                     <div class="rightMenu">
 
@@ -27,35 +46,45 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="cartIcon">
                             <p>Your Cart (0)</p>
                         </div>
-                        <div class="dropdown">
-                            <img src="http://localhost/freshfood/assets/images/user.png" alt="icon" class="userIcon">
-                            <button class="dropdown-content">
-                                <a class="dropdown-menu" href="<?= base_url() . 'profil' ?>">Profile</a>
-                                <a class="dropdown-menu" href="<?= base_url() . 'logout' ?>">Log Out</a>
-                            </button>
-                        </div>
                         <div class="search-box">
                             <input class="search-txt" type="text" name="" placeholder="Type to search">
                             <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
                         </div>
-                        <!-- <div class="box"> -->
                         <div class="dropdown">
-                            <span class="num">2</span>
-                            <img src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon" class="userIcon">
-                            <button class="dropdown-contents">
+                            <button onclick="myFunction()" class="dropbtn"><img
+                                    src="http://localhost/freshfood/assets/images/user.png" alt="icon"
+                                    class="userIcon"></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a class="dropdown-menu" href="<?= base_url() . 'profil' ?>">Profile</a>
+                                <a class="dropdown-menu" href="<?= base_url() . 'logout' ?>">Log Out</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn"> <img
+                                    src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon"
+                                    class="userIcon"></button>
+                            <div id="myDropdown" class="dropdown-content">
                                 <li><span class="dropdown-isi">Your Payment Has Been Successful</span></li>
                                 <li><span class="dropdown-isi">Your order has been successfully ordered</span>
                                 </li>
-                            </button>
+                            </div>
                         </div>
-                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="topBar">
                     <div class="bottomLeftMenu">
                         <p class="bottomSelectedMenu">All</p>
-                        <p class="bottomMenuList">Weight Loss</p>
-                        <p class="bottomMenuList">Weight Gain</p>
+                        <?php
+                        $count = 0;
+                        foreach ($Categories as $c) {
+                            $count++; ?>
+
+                        <p class="bottomMenuList"><?= $c->name ?></p>
+                        <?php
+                            if ($count == 2) {
+                                break;
+                            }
+                        } ?>
                     </div>
                 </div>
             </div>
