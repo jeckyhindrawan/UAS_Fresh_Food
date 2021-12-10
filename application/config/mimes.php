@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | -------------------------------------------------------------------
 | MIME TYPES
 | -------------------------------------------------------------------
-| This file contains an array of mime types.  It is used by the
+| This file contains an array of mime types. It is used by the
 | Upload class to help identify allowed file types.
 |
 */
@@ -85,9 +85,11 @@ return array(
 	'jpm'	=>	array('image/jp2', 'video/mj2', 'image/jpx', 'image/jpm'),
 	'mj2'	=>	array('image/jp2', 'video/mj2', 'image/jpx', 'image/jpm'),
 	'mjp2'	=>	array('image/jp2', 'video/mj2', 'image/jpx', 'image/jpm'),
-	'png'	=>	array('image/png',  'image/x-png'),
+	'png'	=>	array('image/png', 'image/x-png'),
 	'tiff'	=>	'image/tiff',
 	'tif'	=>	'image/tiff',
+	'heic' 	=>	'image/heic',
+	'heif' 	=>	'image/heif',
 	'css'	=>	array('text/css', 'text/plain'),
 	'html'	=>	array('text/html', 'text/plain'),
 	'htm'	=>	array('text/html', 'text/plain'),
@@ -140,7 +142,7 @@ return array(
 	'f4v'   =>	array('video/mp4', 'video/x-f4v'),
 	'flv'	=>	'video/x-flv',
 	'webm'	=>	'video/webm',
-	'aac'   =>	'audio/x-acc',
+	'aac'   =>	array('audio/x-aac', 'audio/aac'),
 	'm4u'   =>	'application/vnd.mpegurl',
 	'm3u'   =>	'text/plain',
 	'xspf'  =>	'application/xspf+xml',

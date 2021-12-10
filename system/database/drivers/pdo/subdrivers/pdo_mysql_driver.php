@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Drivers
  * @category	Database
  * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/database/
+ * @link		https://codeigniter.com/userguide3/database/
  */
 class CI_DB_pdo_mysql_driver extends CI_DB_pdo_driver {
 
@@ -279,7 +279,7 @@ class CI_DB_pdo_mysql_driver extends CI_DB_pdo_driver {
 	 */
 	protected function _list_tables($prefix_limit = FALSE)
 	{
-		$sql = 'SHOW TABLES';
+		$sql = 'SHOW TABLES FROM '.$this->_escape_char.$this->database.$this->_escape_char;
 
 		if ($prefix_limit === TRUE && $this->dbprefix !== '')
 		{

@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Libraries
  * @category	Sessions
  * @author	Andrey Andreev
- * @link	https://codeigniter.com/user_guide/libraries/sessions.html
+ * @link	https://codeigniter.com/userguide3/libraries/sessions.html
  */
 class CI_Session_files_driver extends CI_Session_driver implements SessionHandlerInterface {
 
@@ -135,12 +135,14 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		{
 			if ( ! mkdir($save_path, 0700, TRUE))
 			{
-				throw new Exception("Session: Configured save path '".$this->_config['save_path']."' is not a directory, doesn't exist or cannot be created.");
+				log_message('error', "Session: Configured save path '".$this->_config['save_path']."' is not a directory, doesn't exist or cannot be created.");
+				return $this->_failure;
 			}
 		}
 		elseif ( ! is_writable($save_path))
 		{
-			throw new Exception("Session: Configured save path '".$this->_config['save_path']."' is not writable by the PHP process.");
+			log_message('error', "Session: Configured save path '".$this->_config['save_path']."' is not writable by the PHP process.");
+			return $this->_failure;
 		}
 
 		$this->_config['save_path'] = $save_path;
@@ -194,6 +196,10 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 				$this->_fingerprint = md5('');
 				return '';
 			}
+
+			// Prevent possible data corruption
+			// See https://github.com/bcit-ci/CodeIgniter/issues/5857
+			clearstatcache(TRUE, $this->_file_path.$session_id);
 		}
 		// We shouldn't need this, but apparently we do ...
 		// See https://github.com/bcit-ci/CodeIgniter/issues/4039

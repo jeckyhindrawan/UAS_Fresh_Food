@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @category	Database
  * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/database/
+ * @link		https://codeigniter.com/userguide3/database/
  */
 class CI_DB_result {
 
@@ -381,7 +381,7 @@ class CI_DB_result {
 	 */
 	public function custom_row_object($n, $type)
 	{
-		isset($this->custom_result_object[$type]) OR $this->custom_result_object($type);
+		isset($this->custom_result_object[$type]) OR $this->custom_result_object[$type] = $this->custom_result_object($type);
 
 		if (count($this->custom_result_object[$type]) === 0)
 		{

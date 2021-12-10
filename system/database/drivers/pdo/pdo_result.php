@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @subpackage	Drivers
  * @category	Database
  * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/database/
+ * @link		https://codeigniter.com/userguide3/database/
  */
 class CI_DB_pdo_result extends CI_DB_result {
 
@@ -133,7 +133,7 @@ class CI_DB_pdo_result extends CI_DB_result {
 
 				$retval[$i]			= new stdClass();
 				$retval[$i]->name		= $field['name'];
-				$retval[$i]->type		= $field['native_type'];
+				$retval[$i]->type		= isset($field['native_type']) ? $field['native_type'] : null;
 				$retval[$i]->max_length		= ($field['len'] > 0) ? $field['len'] : NULL;
 				$retval[$i]->primary_key	= (int) ( ! empty($field['flags']) && in_array('primary_key', $field['flags'], TRUE));
 			}
