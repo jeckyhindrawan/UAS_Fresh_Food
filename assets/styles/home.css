@@ -45,7 +45,7 @@ body {
 	font-weight: 500;
 }
 
-.selectedMenu:hover{
+.selectedMenu:hover {
 	color: #1dcf5c;
 }
 
@@ -57,11 +57,11 @@ body {
 	border: none;
 }
 
-.menuList:hover{
+.menuList:hover {
 	color: #1dcf5c;
 }
 
-.menuLists:hover{
+.menuLists:hover {
 	color: #1dcf5c;
 }
 
@@ -136,10 +136,6 @@ body {
 	width: 0px;
 }
 
-
-
-
-
 .bottomLeftMenu {
 	display: flex;
 	margin-left: 52px;
@@ -147,33 +143,29 @@ body {
 	font-weight: 400;
 }
 
-
-
 .bottomSelectedMenu {
 	color: #1dcf5c;
 	margin-right: 38px;
 	font-weight: 500;
 }
 
-.bottomSelectedMenu:hover{
+.bottomSelectedMenu:hover {
 	color: #1dcf5c;
 }
 
 .bottomMenuList {
 	margin-right: 38px;
 }
-.bottomMenuList:hover{
+.bottomMenuList:hover {
 	color: #1dcf5c;
 }
 
 .bottomMenuLists {
 	margin-right: 38px;
 }
-.bottomMenuLists:hover{
+.bottomMenuLists:hover {
 	color: #1dcf5c;
 }
-
-
 
 .leafIconContainer {
 	display: flex;
@@ -285,7 +277,7 @@ body {
 	color: #7c7c7c;
 }
 
-.dropdown-content {
+/* .dropdown-content {
 	display: flex;
 	align-items: center;
 	visibility: hidden;
@@ -351,9 +343,9 @@ body {
 .dropdown-isi{
 	text-decoration: none;
 	margin: 0px;
-}
+} */
 
-.num{
+.num {
 	position: absolute;
 	top: -10px;
 	right: -9px;

@@ -39,6 +39,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                     </div>
                     <input type="submit" class="btn solid" value="register" />
+                </form>
+                <div class="signUpContainer">
+                    <a class="btnSignup" href="<?= base_url() . 'login'; ?>">Have Account ? Back to Login</a>
+                </div>
             </div>
         </div>
     </div>

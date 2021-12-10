@@ -32,7 +32,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <input type="submit" class="btn solid" value="Login" />
                 </form>
-                <a class="btnSignup" href="<?= base_url() . 'signup'; ?>">Or Sign Up Now</a>
+                <div class="signUpContainer">
+                    <a class="btnSignup" href="<?= base_url() . 'signup'; ?>">Or Sign Up Now</a>
+                </div>
             </div>
         </div>
     </div>

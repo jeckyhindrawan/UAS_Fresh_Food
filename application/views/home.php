@@ -36,9 +36,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="topBar">
                     <div class="leftMenu">
                         <img src="http://localhost/freshfood/assets/images/Logo.png" alt="logo" class="logo">
-                        <p class="selectedMenu">Menu</p>
-                        <p class="menuList">About</p>
-                        <p class="menuList">Contact</p>
+                        <a href="<?= base_url() . 'home' ?>" class="selectedMenu">Menu</a>
+                        <a href="<?= base_url() . 'about' ?>" class="menuList">About</a>
+                        <a href="<?= base_url() . 'contact' ?>" class="menuList">Contact</a>
                     </div>
                     <div class="rightMenu">
 
