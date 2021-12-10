@@ -78,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="bottomSelectedMenu">All</p>
                         <?php
                         $count = 0;
-                        foreach ($All_Categories as $c) {
+                        foreach ($all_categories as $c) {
                             $count++; ?>
 
                         <p class="bottomMenuList"><?= $c->name ?></p>
@@ -152,19 +152,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 $temp = "";
                 for ($x = 0; $x < 3; $x++) {
                     do {
-                        $randomNumber = rand(0, count($All_food_details) - 1);
+                        $randomNumber = rand(0, count($all_food_details) - 1);
                     } while (strpos($temp, $randomNumber) == true || $randomNumber == $food_details['0']->id);
                     $temp = "$temp|$randomNumber";
                 ?>
                 <div>
                     <a class="sideBarMenuContainer"
-                        href="<?= base_url() . 'home/food_details/' . $All_food_details[$randomNumber]->id; ?>">
+                        href="<?= base_url() . 'home/food_details/' . $all_food_details[$randomNumber]->id; ?>">
                         <div class="sideBarMenu">
-                            <img src="http://localhost/freshfood/assets/images/<?= $All_food_details[$randomNumber]->id ?>.png"
+                            <img src="http://localhost/freshfood/assets/images/<?= $all_food_details[$randomNumber]->id ?>.png"
                                 alt="imageMenu" class="pastaImage">
                             <div className="subMenuDescContainer">
                                 <p class="judulMakananSideBar">
-                                    <strong><?= $All_food_details[$randomNumber]->title ?></strong>
+                                    <strong><?= $all_food_details[$randomNumber]->title ?></strong>
                                 </p>
                                 <?php
                                     for ($i = 0; $i < $fd->rating; $i++) {
@@ -176,13 +176,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <div class="containerIconClock">
                                         <img src="http://localhost/freshfood/assets/images/loncengKecil.png" alt="icon"
                                             class="iconLoncengKecil">
-                                        <p class="sideBarSmallText"><?= $All_food_details[$randomNumber]->meals ?> Meals
+                                        <p class="sideBarSmallText"><?= $all_food_details[$randomNumber]->meals ?> Meals
                                         </p>
                                     </div>
                                     <div class="containerIconClock">
                                         <img src="http://localhost/freshfood/assets/images/clock.png" alt="icon"
                                             class="clockIcon">
-                                        <p class="sideBarSmallText"><?= $All_food_details[$randomNumber]->days ?> Days
+                                        <p class="sideBarSmallText"><?= $all_food_details[$randomNumber]->days ?> Days
                                         </p>
                                     </div>
                                 </div>

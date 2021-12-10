@@ -76,7 +76,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="bottomSelectedMenu">All</p>
                         <?php
                         $count = 0;
-                        foreach ($Categories as $c) {
+                        foreach ($categories as $c) {
                             $count++; ?>
 
                         <p class="bottomMenuList"><?= $c->name ?></p>
