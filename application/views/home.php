@@ -55,7 +55,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     src="http://localhost/freshfood/assets/images/user.png" alt="icon"
                                     class="userIcon"></button>
                             <div id="myDropdown" class="dropdown-content">
-                                <a class="dropdown-menu" href="<?= base_url() . 'profil' ?>">Profile</a>
+                                <a class="dropdown-menu" href="<?= base_url() . 'profile' ?>">Profile</a>
                                 <a class="dropdown-menu" href="<?= base_url() . 'logout' ?>">Log Out</a>
                             </div>
                         </div>
