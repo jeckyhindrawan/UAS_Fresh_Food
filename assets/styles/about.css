@@ -1,129 +1,244 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
-.section{
-    width: 100%;
-    min-height: 100vh;
-    background-color: #fff;
-}
-
-.container{
-    width: 80%;
-    display: block;
-    margin: auto;
-    padding-top: 100px;
+.section {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #fff;
 }
 
-.content-section{
-    float: left;
-    width: 55%;
-    
+.container {
+	width: 80%;
+	display: block;
+	margin: auto;
+	padding-top: 100px;
 }
 
-.image-section{
-    float: right;
-    width: 30%;
+.content-section {
+	float: left;
+	width: 55%;
 }
 
-.image-section img{
-    width: 100%;
-    height: auto;
+.image-section {
+	float: right;
+	width: 30%;
 }
 
-.content-section .title{
-    text-transform: uppercase;
-    font-size: 20px;
+.image-section img {
+	width: 100%;
+	height: auto;
 }
 
-.content-section .content h3{
-    margin-top: 20px;
-    color: #1dcf5c;
+.content-section .title {
+	text-transform: uppercase;
+	font-size: 20px;
 }
 
-.content-section .content p{
-    margin-top: 10px ;
-    font-family:sans-serif;
-    font-size: 18px;
-    line-height: 1.5;
+.content-section .content h3 {
+	margin-top: 20px;
+	color: #1dcf5c;
 }
 
- .button{
-    margin-top: 30px;
+.content-section .content p {
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
 }
 
-.button a{
-    background-color: #aaac;
-    padding: 12 px 40px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-    letter-spacing: 1px;
+.button {
+	margin-top: 30px;
 }
 
-.button a:hover{
-    background-color: #1dcf5c;
-    color: #fff;
+.button a {
+	background-color: #aaac;
+	padding: 12 px 40px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	letter-spacing: 1px;
 }
 
-.social{
-    margin:40px 40px;
+.button a:hover {
+	background-color: #1dcf5c;
+	color: #fff;
 }
 
-.social i{
-    color: #1dcf5c;
-    font-size: 20px;
-    padding: 0px 10px;
+.social {
+	margin: 40px 40px;
 }
 
-.social i:hover{
-    color: #aaa;
+.social i {
+	color: #1dcf5c;
+	font-size: 20px;
+	padding: 0px 10px;
 }
 
-@media screen and (max-width: 768px){
-    .container{
-        width: 80%;
-        display: block;
-        margin: auto;
-        padding-top: 50px;
-    }
-    .content-section{
-        float: none;
-        width: 100;
-        display: block;
-        margin: auto;
-        
-    }
-    .image-section{
-        float: none;
-        width: 100%;
-        
-    }
-
-    .image-section img{
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: auto;
-    }
-
-    .content-section .title{
-        text-align: center;
-        font-size: 19px;
-    }
-    .button{
-        text-align: center;
-    }
-
-    .button a{
-        padding: 9px 30px;
-    }
-
-    .social{
-        text-align: center;
-    }
+.social i:hover {
+	color: #aaa;
 }
-    
+
+@media screen and (max-width: 768px) {
+	.container {
+		width: 80%;
+		display: block;
+		margin: auto;
+		padding-top: 50px;
+	}
+	.content-section {
+		float: none;
+		width: 100;
+		display: block;
+		margin: auto;
+	}
+	.image-section {
+		float: none;
+		width: 100%;
+	}
+
+	.image-section img {
+		width: 100%;
+		height: auto;
+		display: block;
+		margin: auto;
+	}
+
+	.content-section .title {
+		text-align: center;
+		font-size: 19px;
+	}
+	.button {
+		text-align: center;
+	}
+
+	.button a {
+		padding: 9px 30px;
+	}
+
+	.social {
+		text-align: center;
+	}
+}
+
+.header {
+	background: #fff;
+}
+
+.logo {
+	width: 75px;
+	height: 67px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 52px;
+	margin-right: 57px;
+}
+
+.menuBar {
+	position: fixed;
+	top: 0px;
+	background-color: #ffffff;
+	width: 1440px;
+}
+
+.topBar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #cdcccc;
+	font-size: 17px;
+	font-weight: 400;
+}
+
+.leftMenu {
+	display: flex;
+}
+
+.rightMenu {
+	justify-content: end;
+	display: flex;
+}
+
+.cartIcon {
+	width: 30px;
+	height: 30px;
+	align-self: center;
+	margin-right: 7px;
+}
+
+.cartContainer {
+	display: flex;
+	margin-right: 32px;
+}
+
+.userIcon {
+	width: 14px;
+	height: 16px;
+}
+
+.search-box {
+	border: 1px solid #d3d3d3;
+	border-radius: 8px;
+	width: 43px;
+	height: 43px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+}
+
+.search-box:hover {
+	width: 200px;
+	transition: 0.3s;
+}
+
+.search-box:hover > .search-txt {
+	visibility: visible;
+	width: 150px;
+	transition: 0.3s;
+}
+
+.search-txt {
+	visibility: hidden;
+	border: none;
+	background: transparent;
+	outline: none;
+	padding: 0px;
+	color: black;
+	font-size: 16px;
+	float: left;
+	width: 0px;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown a:hover {
+	background-color: #ddd;
+}
+
+.show {
+	display: block;
+}
