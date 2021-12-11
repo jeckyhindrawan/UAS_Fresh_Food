@@ -32,7 +32,7 @@ class contact extends CI_Controller
             'message' => $message
         );
 
-        $this->m_data->inputUser($data, 'tbl_feedback');
+        $this->m_data->inputData($data, 'tbl_feedback');
 
         redirect('Home');
     }

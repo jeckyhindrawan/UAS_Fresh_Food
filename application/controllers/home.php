@@ -30,4 +30,29 @@ class Home extends CI_Controller
         $data['food_categories'] = $this->m_data->getWhere($whereCategories, 'tbl_categories')->result();
         $this->load->view('food_details', $data);
     }
+
+    public function addCart($id)
+    {
+        $userId = $this->session->userdata('id');
+        $foodId = $id;
+        $where = $arrayName = array(
+            'user_id' => $userId,
+            'food_id' => $foodId
+        );
+        $cartData = $this->m_data->getWhere($where, 'tbl_cart')->result();
+
+        if (sizeof($cartData) == 0) {
+            $data = array(
+                'user_id' => $userId,
+                'food_id' => $foodId,
+                'qty' => 1
+            );
+            $this->m_data->inputData($data, 'tbl_cart');
+        } else {
+            $whereData = array('id' => $cartData[0]->id);
+            $data =  array('qty' => $cartData[0]->qty + 1);
+            $this->m_data->updateData($whereData, $data, 'tbl_cart');
+        };
+        redirect('Home');
+    }
 }

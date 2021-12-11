@@ -52,7 +52,7 @@ class signup extends CI_Controller
             redirect('signup');
         } else {
             $this->session->set_flashdata('message', 'Account has been created');
-            $this->m_data->inputUser($data, 'tbl_user');
+            $this->m_data->inputData($data, 'tbl_user');
             redirect('login');
         };
     }

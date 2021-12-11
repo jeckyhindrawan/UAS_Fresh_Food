@@ -29,8 +29,14 @@ class m_data extends CI_Model
         return $this->db->get($table);
     }
 
-    function inputUser($data, $table)
+    function inputData($data, $table)
     {
         $this->db->insert($table, $data);
+    }
+
+    function updateData($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
     }
 }
