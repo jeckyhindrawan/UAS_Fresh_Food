@@ -158,16 +158,16 @@
             </div>
             <div class="topBar">
                 <div class="bottomLeftMenu">
-                    <button class="categoryButton">
+                    <a class="categoryButton">
                         <p class="bottomSelectedMenu">All</p>
-                    </button>
+                    </a>
                     <?php
                     $count = 0;
                     foreach ($categories as $c) {
                         $count++; ?>
-                    <button class="categoryButton">
+                    <a class="categoryButton">
                         <p class="bottomMenuList"><?= $c->name ?></p>
-                    </button>
+                    </a>
                     <?php
                         if ($count == 2) {
                             break;
