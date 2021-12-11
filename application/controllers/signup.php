@@ -44,8 +44,14 @@ class signup extends CI_Controller
         $user = $this->m_data->getOrLike($where1, $where2, 'tbl_user')->row_array();
 
         if ($user) {
+            if ($user['username'] == $username) {
+                $this->session->set_flashdata('message', 'Username has been taken');
+            } else {
+                $this->session->set_flashdata('message', 'Email has been taken');
+            }
             redirect('signup');
         } else {
+            $this->session->set_flashdata('message', 'Account has been created');
             $this->m_data->inputUser($data, 'tbl_user');
             redirect('login');
         };

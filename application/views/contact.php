@@ -21,38 +21,36 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="contact-box">
             <div class="contact-left">
                 <h3>Sent your request</h3>
-                <form>
-
+                <form action="<?= base_url() . "contact/sendAction" ?>" method="post">
                     <div class="input-row">
                         <div class="input-group">
                             <label>Name</label>
-                            <input type="text" placeholder="Enter your name">
+                            <input type="text" placeholder="Enter your name" name="name" required>
                         </div>
                         <div class="input-group">
                             <label>Phone</label>
-                            <input type="text" placeholder="Enter your phone">
+                            <input type="text" placeholder="Enter your phone" name="phone" required>
                         </div>
                     </div>
                     <div class="input-row">
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your mail">
+                            <input type="text" placeholder="Enter your mail" name="email" required>
                         </div>
                         <div class="input-group">
                             <label>Subject</label>
-                            <input type="text" placeholder="Enter your Note">
+                            <input type="text" placeholder="Enter your Note" name="subject" required>
                         </div>
                     </div>
 
                     <label>Message</label>
-                    <textarea rows="5" placeholder="Your Message"></textarea>
+                    <textarea rows="5" placeholder="Your Message" name="message" required></textarea>
 
                     <button type="submit">SEND</button>
                 </form>
             </div>
             <div class="contact-right">
                 <h3>Reach Us</h3>
-
                 <table>
                     <tr>
                         <td>Email</td>

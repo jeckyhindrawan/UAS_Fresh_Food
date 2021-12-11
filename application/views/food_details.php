@@ -48,7 +48,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="menuDesc"><?= $fd->description ?></p>
                         <div class="bigMenu">
                             <?php
-                                foreach ($categories as $c) {
+                                foreach ($food_categories as $c) {
                                 ?>
                             <div class="categoryContainer">
                                 <p class="categoryText"><?= $c->name ?></p>
@@ -73,12 +73,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     redirect(base_url() . 'home');
                 }
                 $count = 0;
-                $temp = "";
+                $temp = "#|" . $food_details['0']->id - 1 . "|";
                 for ($x = 0; $x < 3; $x++) {
                     do {
                         $randomNumber = rand(0, count($all_food_details) - 1);
-                    } while (strpos($temp, $randomNumber) == true || $randomNumber == $food_details['0']->id);
-                    $temp = "$temp|$randomNumber";
+                    } while (strpos($temp, "|" . $randomNumber . "|") == true);
+                    $temp = "$temp|$randomNumber|";
                 ?>
                 <div>
                     <a class="sideBarMenuContainer"
