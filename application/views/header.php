@@ -158,20 +158,15 @@
             </div>
             <div class="topBar">
                 <div class="bottomLeftMenu">
-                    <a class="categoryButton">
+                    <a class="categoryButton" href="<?= base_url() . "home" ?>">
                         <p class="bottomSelectedMenu">All</p>
                     </a>
                     <?php
-                    $count = 0;
-                    foreach ($categories as $c) {
-                        $count++; ?>
-                    <a class="categoryButton">
+                    foreach ($categories as $c) { ?>
+                    <a class=" categoryButton" href="<?= base_url() . "home?category=" . $c->id ?>">
                         <p class="bottomMenuList"><?= $c->name ?></p>
                     </a>
                     <?php
-                        if ($count == 2) {
-                            break;
-                        }
                     } ?>
                 </div>
             </div>

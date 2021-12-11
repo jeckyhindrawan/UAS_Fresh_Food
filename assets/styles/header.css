@@ -438,4 +438,6 @@ hr {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	text-decoration: none;
+	color: black
 }

@@ -13,21 +13,27 @@ class Home extends CI_Controller
 
     public function index()
     {
+        $id = $this->input->get('category');
         $data['categories'] = $this->m_data->getDistinct('tbl_categories')->result();
-        $data['food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
+        if (isset($id)) {
+            $query = "SELECT tfd.* FROM tbl_food_categories tfc LEFT JOIN tbl_food_details tfd ON tfc.food_id = tfd.id WHERE category_id = $id";
+            $data['food_details'] = $this->m_data->runQuery($query)->result();
+        } else {
+            $data['food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
+        }
         $this->load->view('home', $data);
     }
 
     public function food_details($id)
     {
         $whereFoodDetails = array('id' => $id);
-        $whereCategories = array('id_food' => $id);
+        $queryFoodCategories = "SELECT * FROM tbl_food_categories tfc LEFT JOIN tbl_categories tc ON tfc.category_id = tc.id WHERE food_id = $id";
 
         $data['all_food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
         $data['categories'] = $this->m_data->getDistinct('tbl_categories')->result();
 
         $data['food_details'] = $this->m_data->getWhere($whereFoodDetails, 'tbl_food_details')->result();
-        $data['food_categories'] = $this->m_data->getWhere($whereCategories, 'tbl_categories')->result();
+        $data['food_categories'] = $this->m_data->runQuery($queryFoodCategories)->result();
         $this->load->view('food_details', $data);
     }
 
