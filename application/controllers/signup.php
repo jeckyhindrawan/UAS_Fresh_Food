@@ -24,6 +24,7 @@ class signup extends CI_Controller
         $password2 = $this->input->post('password2');
 
         if ($password !== $password2) {
+            $this->session->set_flashdata('message', 'Password and confirmation password not match');
             redirect('signup');
         }
 

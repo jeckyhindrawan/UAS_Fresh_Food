@@ -93,6 +93,16 @@ class Home extends CI_Controller
             $data =  array('qty' => $cartData[0]->qty + 1);
             $this->m_data->updateData($whereData, $data, 'tbl_cart');
         };
+    public function checkout()
+    {
+        $userId = $this->session->userdata['id'];
+
+        $query = "INSERT INTO `tbl_history`(`user_id`, `item_count`) SELECT $userId, COUNT(*) FROM tbl_cart WHERE user_id = $userId;";
+        $this->m_data->runQuery($query);
+
+        $where = array('user_id' => $userId);
+        $this->m_data->deleteData($where, 'tbl_cart');
+
         redirect('Home');
     }
 }
