@@ -74,7 +74,7 @@
                     <div class="dropdown">
                         <button onclick="myFunction3()" class="cartContainer">
                             <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="cartIcon">
-                            <p class="cartText">Your Cart (0)</p>
+                            <p class="cartText">Your Cart (<?= array_sum(array_column($cart, 'qty')) ?>)</p>
                         </button>
                         <div id="myDropdown3" class="dropdown-content3">
                             <div class="cartHeader">
@@ -88,21 +88,22 @@
                                 echo "<p>Data Kosong</p>";
                             } else {
                                 foreach ($cart as $c) {
-                                    $total += $c->price;
+                                    $total += $c->price * $c->qty;
                             ?>
                             <div class="cartContainerList">
-                                <img src="http://localhost/freshfood/assets/images/1.png" class="cartImage" />
+                                <img src="http://localhost/freshfood/assets/images/<?= $c->id ?>.png"
+                                    class="cartImage" />
 
                                 <div class="about">
                                     <h1 class="title"><?= $c->title ?></h1>
                                 </div>
                                 <div class="counter">
                                     <div class="btn">+</div>
-                                    <div class="count">2</div>
+                                    <div class="count"><?= $c->qty ?></div>
                                     <div class="btn">-</div>
                                 </div>
                                 <div class="prices">
-                                    <div class="amount">$<?= $c->price ?></div>
+                                    <div class="amount">$<?= $c->price * $c->qty ?></div>
                                     <div class="remove"><u>Remove</u></div>
                                 </div>
                             </div>
@@ -110,7 +111,7 @@
                             <div class="total">
                                 <div>
                                     <div class="Subtotal">Sub-Total</div>
-                                    <div class="items"><?= sizeof($cart) ?> items</div>
+                                    <div class="items"><?= array_sum(array_column($cart, 'qty')) ?> items</div>
                                 </div>
                                 <div class="total-amount">$<?= $total ?></div>
                             </div>
@@ -137,14 +138,13 @@
                                 src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon"
                                 class="userIcon"></button>
                         <div id="myDropdown2" class="dropdown-content2">
+                            <?php foreach (array_reverse($history) as $h) { ?>
                             <div class="listNotif">
-                                <p class="notifTitle">Title</p>
-                                <p class="notifSubtitle">Subtitle</p>
+                                <p class="notifTitle">Purchase Successful</p>
+                                <p class="notifSubtitle">
+                                    <?= "$h->item_count Item" . $retVal = ($h->item_count > 1) ? 's' : ''; ?></p>
                             </div>
-                            <div class="listNotif">
-                                <p class="notifTitle">Title</p>
-                                <p class="notifSubtitle">Subtitle</p>
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

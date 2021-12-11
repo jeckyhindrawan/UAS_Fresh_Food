@@ -15,12 +15,17 @@ class Home extends CI_Controller
     {
         $id = $this->input->get('category');
         $userId = $this->session->userdata('id');
+
+        $whereHistory = array("user_id" => $userId);
+        $queryCart = "SELECT tfd.*, tc.qty  FROM tbl_cart tc LEFT JOIN tbl_food_details tfd ON tc.food_id = tfd.id where user_id = $userId";
+
+        $data['cart'] = $this->m_data->runQuery($queryCart)->result();
         $data['categories'] = $this->m_data->getDistinct('tbl_categories')->result();
-        $query = "SELECT tbl_food_details.* FROM tbl_cart LEFT JOIN tbl_food_details ON tbl_cart.id = tbl_food_details.id where user_id = $userId";
-        $data['cart'] = $this->m_data->runQuery($query)->result();
+        $data['history'] = $this->m_data->getWhere($whereHistory, 'tbl_history')->result();
+
         if (isset($id)) {
-            $query = "SELECT tfd.* FROM tbl_food_categories tfc LEFT JOIN tbl_food_details tfd ON tfc.food_id = tfd.id WHERE category_id = $id";
-            $data['food_details'] = $this->m_data->runQuery($query)->result();
+            $queryFoodDetails = "SELECT tfd.* FROM tbl_food_categories tfc LEFT JOIN tbl_food_details tfd ON tfc.food_id = tfd.id WHERE category_id = $id";
+            $data['food_details'] = $this->m_data->runQuery($queryFoodDetails)->result();
         } else {
             $data['food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
         }
@@ -31,20 +36,20 @@ class Home extends CI_Controller
     {
         $userId = $this->session->userdata('id');
 
+        $whereHistory = array("user_id" => $userId);
         $whereFoodDetails = array('id' => $id);
         $queryFoodCategories = "SELECT * FROM tbl_food_categories tfc LEFT JOIN tbl_categories tc ON tfc.category_id = tc.id WHERE food_id = $id";
-        $queryCart = "SELECT tbl_food_details.* FROM tbl_cart LEFT JOIN tbl_food_details ON tbl_cart.id = tbl_food_details.id where user_id = $userId";
+        $queryCart = "SELECT tfd.*, tc.qty FROM tbl_cart tc LEFT JOIN tbl_food_details tfd ON tc.food_id = tfd.id where user_id = $userId";
 
         $data['all_food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
         $data['categories'] = $this->m_data->getDistinct('tbl_categories')->result();
         $data['cart'] = $this->m_data->runQuery($queryCart)->result();
-
+        $data['history'] = $this->m_data->getWhere($whereHistory, 'tbl_history')->result();
         $data['food_details'] = $this->m_data->getWhere($whereFoodDetails, 'tbl_food_details')->result();
         $data['food_categories'] = $this->m_data->runQuery($queryFoodCategories)->result();
+
         $this->load->view('food_details', $data);
     }
-
-
 
     public function addCart($id)
     {
@@ -98,7 +103,7 @@ class Home extends CI_Controller
     {
         $userId = $this->session->userdata['id'];
 
-        $query = "INSERT INTO `tbl_history`(`user_id`, `item_count`) SELECT $userId, COUNT(*) FROM tbl_cart WHERE user_id = $userId;";
+        $query = "INSERT INTO `tbl_history`(`user_id`, `item_count`) SELECT $userId, SUM(`qty`) FROM tbl_cart WHERE user_id = $userId;";
         $this->m_data->runQuery($query);
 
         $where = array('user_id' => $userId);
