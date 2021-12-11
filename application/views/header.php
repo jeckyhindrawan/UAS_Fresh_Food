@@ -82,41 +82,50 @@
                                 <h5 class="Action">Remove all</h5>
                             </div>
                             <?php
-                            $total = 0;
-                            $emptyCart = sizeof($cart) == 0;
-                            if ($emptyCart) {
-                                echo "<p>Data Kosong</p>";
-                            } else {
+                            $moreThen3Style = (sizeof($cart) > 3) ? "overflow-y: scroll; height:300px;" : "overflow:hidden;";
+                            ?>
+                            <div style="<?= $moreThen3Style ?>">
+                                <?php
+                                $total = 0;
+                                $emptyCart = sizeof($cart) == 0;
+                                if ($emptyCart) {
+                                    echo "<p>Data Kosong</p>";
+                                }
                                 foreach ($cart as $c) {
                                     $total += $c->price * $c->qty;
-                            ?>
-                            <div class="cartContainerList">
-                                <img src="http://localhost/freshfood/assets/images/<?= $c->id ?>.png"
-                                    class="cartImage" />
+                                ?>
+                                <div class="cartContainerList">
+                                    <img src="http://localhost/freshfood/assets/images/<?= $c->id ?>.png"
+                                        class="cartImage" />
 
-                                <div class="about">
-                                    <h1 class="title"><?= $c->title ?></h1>
+                                    <div class="about">
+                                        <h1 class="title"><?= $c->title ?></h1>
+                                    </div>
+                                    <div class="counter">
+                                        <div class="btn">+</div>
+                                        <div class="count"><?= $c->qty ?></div>
+                                        <div class="btn">-</div>
+                                    </div>
+                                    <div class="prices">
+                                        <div class="amount">$<?= $c->price * $c->qty ?></div>
+                                        <div class="remove"><u>Remove</u></div>
+                                    </div>
                                 </div>
-                                <div class="counter">
-                                    <div class="btn">+</div>
-                                    <div class="count"><?= $c->qty ?></div>
-                                    <div class="btn">-</div>
-                                </div>
-                                <div class="prices">
-                                    <div class="amount">$<?= $c->price * $c->qty ?></div>
-                                    <div class="remove"><u>Remove</u></div>
-                                </div>
+                                <?php } ?>
                             </div>
-                            <?php } ?>
-                            <div class="total">
-                                <div>
-                                    <div class="Subtotal">Sub-Total</div>
-                                    <div class="items"><?= array_sum(array_column($cart, 'qty')) ?> items</div>
+                            <form action="<?php echo base_url() . 'home/checkout/'; ?>">
+                                <div class="total">
+                                    <div>
+                                        <div class="Subtotal">Sub-Total</div>
+                                        <div class="items"><?= array_sum(array_column($cart, 'qty')) ?> items</div>
+                                    </div>
+                                    <div class="total-amount">$<?= $total ?></div>
                                 </div>
-                                <div class="total-amount">$<?= $total ?></div>
-                            </div>
-                            <button class="button">Checkout</button>
-                            <?php } ?>
+                                <button type="submit" <?php if ($emptyCart) {
+                                                            echo "disabled";
+                                                        } ?> class="button">Checkout</button>
+                            </form>
+                            <?php ?>
                         </div>
                     </div>
                     <div class="search-box">
@@ -137,7 +146,8 @@
                         <button onclick="myFunction2()" class="dropbtn2"> <img
                                 src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon"
                                 class="userIcon"></button>
-                        <div id="myDropdown2" class="dropdown-content2">
+                        <?php $moreThen5Style = (sizeof($history) > 5) ? "overflow-y: scroll; height:500px;" : "overflow:hidden;"; ?>
+                        <div id="myDropdown2" class="dropdown-content2" style="<?= $moreThen5Style ?>">
                             <?php foreach (array_reverse($history) as $h) { ?>
                             <div class="listNotif">
                                 <p class="notifTitle">Purchase Successful</p>
