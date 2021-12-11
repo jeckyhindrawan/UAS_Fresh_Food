@@ -15,7 +15,7 @@
 	width: 80%;
 	display: block;
 	margin: auto;
-	padding-top: 100px;
+	padding-top: 200px;
 }
 
 .content-section {
@@ -48,24 +48,6 @@
 	font-family: sans-serif;
 	font-size: 18px;
 	line-height: 1.5;
-}
-
-.button {
-	margin-top: 30px;
-}
-
-.button a {
-	background-color: #aaac;
-	padding: 12 px 40px;
-	text-decoration: none;
-	color: #fff;
-	font-size: 20px;
-	letter-spacing: 1px;
-}
-
-.button a:hover {
-	background-color: #1dcf5c;
-	color: #fff;
 }
 
 .social {
@@ -124,121 +106,10 @@
 	}
 }
 
-.header {
-	background: #fff;
-}
-
-.logo {
-	width: 75px;
-	height: 67px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-left: 52px;
-	margin-right: 57px;
-}
-
-.menuBar {
-	position: fixed;
-	top: 0px;
-	background-color: #ffffff;
-	width: 1440px;
-}
-
-.topBar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid #cdcccc;
-	font-size: 17px;
-	font-weight: 400;
-}
-
-.leftMenu {
-	display: flex;
-}
-
-.rightMenu {
-	justify-content: end;
-	display: flex;
-}
-
-.cartIcon {
-	width: 30px;
-	height: 30px;
-	align-self: center;
-	margin-right: 7px;
-}
-
-.cartContainer {
-	display: flex;
-	margin-right: 32px;
-}
-
-.userIcon {
-	width: 14px;
-	height: 16px;
-}
-
-.search-box {
-	border: 1px solid #d3d3d3;
-	border-radius: 8px;
-	width: 43px;
-	height: 43px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 20px;
-}
-
-.search-box:hover {
-	width: 200px;
-	transition: 0.3s;
-}
-
-.search-box:hover > .search-txt {
-	visibility: visible;
-	width: 150px;
-	transition: 0.3s;
-}
-
-.search-txt {
-	visibility: hidden;
-	border: none;
-	background: transparent;
-	outline: none;
-	padding: 0px;
-	color: black;
-	font-size: 16px;
-	float: left;
-	width: 0px;
-}
-
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	overflow: auto;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
+.backContainer {
 	text-decoration: none;
-	display: block;
-}
-
-.dropdown a:hover {
-	background-color: #ddd;
-}
-
-.show {
-	display: block;
+	position: absolute;
+	top: 10px;
+	left: 50px;
+	color: black;
 }

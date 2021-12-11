@@ -12,48 +12,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
-    <div class="header">
-        <div class="menuBar">
-            <div class="topBar">
-                <div class="leftMenu">
-                    <img src="http://localhost/freshfood/assets/images/Logo.png" alt="logo" class="logo">
-                    <a href="<?= base_url() . 'home' ?>" class="selectedMenu">Menu</a>
-                    <a href="<?= base_url() . 'about' ?>" class="menuList">About</a>
-                    <a href="<?= base_url() . 'contact' ?>" class="menuList">Contact</a>
-                </div>
-                <div class="rightMenu">
-
-                    <div class="cartContainer">
-                        <img src="http://localhost/freshfood/assets/images/cart.png" alt="icon" class="cartIcon">
-                        <p>Your Cart (0)</p>
-                    </div>
-                    <div class="search-box">
-                        <input class="search-txt" type="text" name="" placeholder="Type to search">
-                        <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
-                    </div>
-                    <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn"><img
-                                src="http://localhost/freshfood/assets/images/user.png" alt="icon"
-                                class="userIcon"></button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a class="dropdown-menu" href="<?= base_url() . 'profile' ?>">Profile</a>
-                            <a class="dropdown-menu" href="<?= base_url() . 'logout' ?>">Log Out</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn"> <img
-                                src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon"
-                                class="userIcon"></button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <li><span class="dropdown-isi">Your Payment Has Been Successful</span></li>
-                            <li><span class="dropdown-isi">Your order has been successfully ordered</span>
-                            </li>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <a class="backContainer" href="<?= base_url() . 'home' ?>">
+        Back to home
+    </a>
     <div class="section">
         <div class="container">
             <div class="content-section">
@@ -69,9 +30,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         architecto quod error quis hic pariatur, commodi vitae molestias quibusdam mollitia tempore
                         dolores ea. Laboriosam, perspiciatis.
                     </p>
-                </div>
-                <div class="button">
-                    <a href="">Read More</a>
                 </div>
                 <div class="social">
                     <class= href=""><i class="fab fa-facebook-f"></i></a>
