@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <a class="backContainer" href="<?= base_url() . 'home' ?>">
+        Back to home
+    </a>
     <?php foreach ($user as $u) : ?>
     <div class="container">
         <div class="upper-container">
