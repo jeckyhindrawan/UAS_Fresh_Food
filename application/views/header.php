@@ -81,12 +81,20 @@
                                 <h3 class="Heading">Shopping Cart</h3>
                                 <h5 class="Action">Remove all</h5>
                             </div>
-
+                            <?php
+                            $total = 0;
+                            $emptyCart = sizeof($cart) == 0;
+                            if ($emptyCart) {
+                                echo "<p>Data Kosong</p>";
+                            } else {
+                                foreach ($cart as $c) {
+                                    $total += $c->price;
+                            ?>
                             <div class="cartContainerList">
                                 <img src="http://localhost/freshfood/assets/images/1.png" class="cartImage" />
 
                                 <div class="about">
-                                    <h1 class="title">Apple Juice</h1>
+                                    <h1 class="title"><?= $c->title ?></h1>
                                 </div>
                                 <div class="counter">
                                     <div class="btn">+</div>
@@ -94,35 +102,20 @@
                                     <div class="btn">-</div>
                                 </div>
                                 <div class="prices">
-                                    <div class="amount">$2.99</div>
+                                    <div class="amount">$<?= $c->price ?></div>
                                     <div class="remove"><u>Remove</u></div>
                                 </div>
                             </div>
-
-                            <div class="cartContainerList">
-                                <img src="http://localhost/freshfood/assets/images/2.png" class="cartImage" />
-
-                                <div class="about">
-                                    <h1 class="title">Grapes Juice</h1>
-                                </div>
-                                <div class="counter">
-                                    <div class="btn">+</div>
-                                    <div class="count">1</div>
-                                    <div class="btn">-</div>
-                                </div>
-                                <div class="prices">
-                                    <div class="amount">$3.19</div>
-                                    <div class="remove"><u>Remove</u></div>
-                                </div>
-                            </div>
+                            <?php } ?>
                             <div class="total">
                                 <div>
                                     <div class="Subtotal">Sub-Total</div>
-                                    <div class="items">2 items</div>
+                                    <div class="items"><?= sizeof($cart) ?> items</div>
                                 </div>
-                                <div class="total-amount">$6.18</div>
+                                <div class="total-amount">$<?= $total ?></div>
                             </div>
                             <button class="button">Checkout</button>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="search-box">
