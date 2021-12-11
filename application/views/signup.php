@@ -19,6 +19,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="signup-signup">
                 <form action="<?= base_url() . 'signup/actionSignup' ?>" class="sign-up-form" method="post">
                     <h2 class="title">Sign Up</h2>
+                    <h2>
+                        <?= $this->session->flashdata('message'); ?>
+                    </h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Username" name="username" required />

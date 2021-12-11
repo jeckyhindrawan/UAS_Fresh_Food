@@ -75,8 +75,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => '192.168.100.16',
-	'hostname' => 'Localhost',
+	'hostname' => '192.168.100.20',
+	// 'hostname' => 'Localhost',
 	'username' => 'root',
 	'password' => '',
 	// 'hostname' => 'sql6.freemysqlhosting.net',

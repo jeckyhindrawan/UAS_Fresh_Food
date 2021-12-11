@@ -24,10 +24,10 @@ class Home extends CI_Controller
         $whereCategories = array('id_food' => $id);
 
         $data['all_food_details'] = $this->m_data->getTableData('tbl_food_details')->result();
-        $data['all_categories'] = $this->m_data->getDistinct('tbl_categories')->result();
+        $data['categories'] = $this->m_data->getDistinct('tbl_categories')->result();
 
         $data['food_details'] = $this->m_data->getWhere($whereFoodDetails, 'tbl_food_details')->result();
-        $data['categories'] = $this->m_data->getWhere($whereCategories, 'tbl_categories')->result();
+        $data['food_categories'] = $this->m_data->getWhere($whereCategories, 'tbl_categories')->result();
         $this->load->view('food_details', $data);
     }
 }
