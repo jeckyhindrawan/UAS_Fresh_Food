@@ -93,6 +93,7 @@ class Home extends CI_Controller
             $data =  array('qty' => $cartData[0]->qty + 1);
             $this->m_data->updateData($whereData, $data, 'tbl_cart');
         };
+    }
     public function checkout()
     {
         $userId = $this->session->userdata['id'];
