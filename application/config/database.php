@@ -75,14 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '192.168.100.20',
-	// 'hostname' => 'Localhost',
+	'hostname' => 'Localhost',
 	'username' => 'root',
 	'password' => '',
-	// 'hostname' => 'sql6.freemysqlhosting.net',
-	// 'username' => 'sql6455752',
-	// 'password' => 'WnxmeYrTGe',
-	'database' => 'sql6455752',
+	'database' => 'db_freshfood',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
