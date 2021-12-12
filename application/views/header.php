@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?= base_url() . '/assets/styles/header.css' ?>">
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
 </head>
 
 <body>
@@ -150,7 +152,19 @@
                                 class="userIcon"></button>
                         <?php $moreThen5Style = (sizeof($history) > 5) ? "overflow-y: scroll; height:500px;" : "overflow:hidden;"; ?>
                         <div id="myDropdown2" class="dropdown-content2" style="<?= $moreThen5Style ?>">
-                            <?php foreach (array_reverse($history) as $h) { ?>
+                            <?php
+                            $emptyHistory = sizeof($history) == 0;
+                            if ($emptyHistory) {
+                            ?>
+                            <div class="listNotif">
+                                <?php
+                                    echo "<p>Data Kosong</p>";
+                                    ?>
+                            </div>
+                            <?php
+                            }
+                            foreach (array_reverse($history) as $h) {
+                            ?>
                             <div class="listNotif">
                                 <p class="notifTitle">Purchase Successful</p>
                                 <p class="notifSubtitle">

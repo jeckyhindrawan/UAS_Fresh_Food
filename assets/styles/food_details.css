@@ -132,6 +132,10 @@ body {
 	background-color: transparent;
 }
 
+.addCartContainer:hover {
+	cursor: pointer;
+}
+
 .priceCartIcon {
 	width: 26px;
 	height: 26px;
