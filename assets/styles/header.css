@@ -369,6 +369,13 @@
 	color: #fff;
 }
 
+.counter {
+	margin-left: 20px;
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+}
+
 .count {
 	font-size: 20px;
 	font-weight: 600;

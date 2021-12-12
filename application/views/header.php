@@ -5,61 +5,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?= base_url() . '/assets/styles/header.css' ?>">
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
-    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
 </head>
 
 <body>
     <script type="text/javascript">
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
         }
-    }
 
-    function myFunction2() {
-        document.getElementById("myDropdown2").classList.toggle("show2");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn2')) {
-            var dropdowns2 = document.getElementsByClassName("dropdown-content2");
-            var i;
-            for (i = 0; i < dropdowns2.length; i++) {
-                var openDropdown2 = dropdowns2[i];
-                if (openDropdown2.classList.contains('show2')) {
-                    openDropdown2.classList.remove('show2');
-                }
-            }
+        function myFunction2() {
+            document.getElementById("myDropdown2").classList.toggle("show2");
         }
-    }
 
-    function myFunction3() {
-        document.getElementById("myDropdown3").classList.toggle("show3");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.cartContainer')) {
-            var dropdowns2 = document.getElementsByClassName("dropdown-content3");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown2 = dropdowns2[i];
-                if (openDropdown2.classList.contains('show3')) {
-                    openDropdown2.classList.remove('show3');
-                }
-            }
+        function myFunction3() {
+            document.getElementById("myDropdown3").classList.toggle("show3");
         }
-    }
     </script>
 
     <div class="header">
@@ -97,24 +57,19 @@
                                 foreach ($cart as $c) {
                                     $total += $c->price * $c->qty;
                                 ?>
-                                <div class="cartContainerList">
-                                    <img src="http://localhost/freshfood/assets/images/<?= $c->id ?>.png"
-                                        class="cartImage" />
-
-                                    <div class="about">
-                                        <h1 class="title"><?= $c->title ?></h1>
+                                    <div class="cartContainerList">
+                                        <img src="http://localhost/freshfood/assets/images/<?= $c->id ?>.png" class="cartImage" />
+                                        <div class="about">
+                                            <h1 class="title"><?= $c->title ?></h1>
+                                        </div>
+                                        <div class="counter">
+                                            <div class="count"><?= $c->qty ?></div>
+                                        </div>
+                                        <div class="prices">
+                                            <div class="amount">$<?= $c->price * $c->qty ?></div>
+                                            <a class="remove" href="<?= base_url() . "home/removeCart/$c->cartID" ?>"><u>Remove</u></a>
+                                        </div>
                                     </div>
-                                    <div class="button-container">
-                                        <button class="cart-qty-plus" type="button" value="+">+</button>
-                                        <input type="text" name="qty" min="0" class="qty form-control" value="0" />
-                                        <button class="cart-qty-minus" type="button" value="-">-</button>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="amount">$<?= $c->price * $c->qty ?></div>
-                                        <a class="remove"
-                                            href="<?= base_url() . "home/removeCart/$c->cartID" ?>"><u>Remove</u></a>
-                                    </div>
-                                </div>
                                 <?php } ?>
                             </div>
                             <form action="<?php echo base_url() . 'home/checkout/'; ?>">
@@ -133,13 +88,11 @@
                         </div>
                     </div>
                     <div class="search-box">
-                        <input class="search-txt" type="text" name="" placeholder="Type to search">
+                        <input class="search-txt" type="text" name="" placeholder="Belum bisa search">
                         <img src="http://localhost/freshfood/assets/images/search.png" alt="icon" class="userIcon">
                     </div>
                     <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn"><img
-                                src="http://localhost/freshfood/assets/images/user.png" alt="icon"
-                                class="userIcon"></button>
+                        <button onclick="myFunction()" class="dropbtn"><img src="http://localhost/freshfood/assets/images/user.png" alt="icon" class="userIcon"></button>
                         <div id="myDropdown" class="dropdown-content">
                             <a class="dropdown-menu" href="<?= base_url() . 'profile' ?>">Profile</a>
                             <a class="dropdown-menu" href="<?= base_url() . 'logout' ?>">Log Out</a>
@@ -147,29 +100,27 @@
                     </div>
 
                     <div class="dropdown">
-                        <button onclick="myFunction2()" class="dropbtn2"> <img
-                                src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon"
-                                class="userIcon"></button>
+                        <button onclick="myFunction2()" class="dropbtn2"> <img src="http://localhost/freshfood/assets/images/lonceng.png" alt="icon" class="userIcon"></button>
                         <?php $moreThen5Style = (sizeof($history) > 5) ? "overflow-y: scroll; height:500px;" : "overflow:hidden;"; ?>
                         <div id="myDropdown2" class="dropdown-content2" style="<?= $moreThen5Style ?>">
                             <?php
                             $emptyHistory = sizeof($history) == 0;
                             if ($emptyHistory) {
                             ?>
-                            <div class="listNotif">
-                                <?php
+                                <div class="listNotif">
+                                    <?php
                                     echo "<p>Data Kosong</p>";
                                     ?>
-                            </div>
+                                </div>
                             <?php
                             }
                             foreach (array_reverse($history) as $h) {
                             ?>
-                            <div class="listNotif">
-                                <p class="notifTitle">Purchase Successful</p>
-                                <p class="notifSubtitle">
-                                    <?= "$h->item_count Item" . $retVal = ($h->item_count > 1) ? 's' : ''; ?></p>
-                            </div>
+                                <div class="listNotif">
+                                    <p class="notifTitle">Purchase Successful</p>
+                                    <p class="notifSubtitle">
+                                        <?= "$h->item_count Item" . $retVal = ($h->item_count > 1) ? 's' : ''; ?></p>
+                                </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -182,9 +133,9 @@
                     </a>
                     <?php
                     foreach ($categories as $c) { ?>
-                    <a class=" categoryButton" href="<?= base_url() . "home?category=" . $c->id ?>">
-                        <p class="bottomMenuList"><?= $c->name ?></p>
-                    </a>
+                        <a class=" categoryButton" href="<?= base_url() . "home?category=" . $c->id ?>">
+                            <p class="bottomMenuList"><?= $c->name ?></p>
+                        </a>
                     <?php
                     } ?>
                 </div>
