@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <script>
+    <script type="text/javascript">
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -33,7 +33,7 @@
         if (!event.target.matches('.dropbtn2')) {
             var dropdowns2 = document.getElementsByClassName("dropdown-content2");
             var i;
-            for (i = 0; i < dropdowns.length; i++) {
+            for (i = 0; i < dropdowns2.length; i++) {
                 var openDropdown2 = dropdowns2[i];
                 if (openDropdown2.classList.contains('show2')) {
                     openDropdown2.classList.remove('show2');
@@ -59,6 +59,7 @@
         }
     }
     </script>
+
     <div class="header">
         <div class="menuBar">
             <div class="topBar">
@@ -79,7 +80,7 @@
                         <div id="myDropdown3" class="dropdown-content3">
                             <div class="cartHeader">
                                 <h3 class="Heading">Shopping Cart</h3>
-                                <h5 class="Action">Remove all</h5>
+                                <a class="Action" href="<?= base_url() . "home/removeCart" ?>">Remove all</a>
                             </div>
                             <?php
                             $moreThen3Style = (sizeof($cart) > 3) ? "overflow-y: scroll; height:300px;" : "overflow:hidden;";
@@ -101,14 +102,15 @@
                                     <div class="about">
                                         <h1 class="title"><?= $c->title ?></h1>
                                     </div>
-                                    <div class="counter">
-                                        <div class="btn">+</div>
-                                        <div class="count"><?= $c->qty ?></div>
-                                        <div class="btn">-</div>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus" type="button" value="+">+</button>
+                                        <input type="text" name="qty" min="0" class="qty form-control" value="0" />
+                                        <button class="cart-qty-minus" type="button" value="-">-</button>
                                     </div>
                                     <div class="prices">
                                         <div class="amount">$<?= $c->price * $c->qty ?></div>
-                                        <div class="remove"><u>Remove</u></div>
+                                        <a class="remove"
+                                            href="<?= base_url() . "home/removeCart/$c->cartID" ?>"><u>Remove</u></a>
                                     </div>
                                 </div>
                                 <?php } ?>
