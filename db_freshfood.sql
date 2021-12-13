@@ -202,10 +202,6 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id`, `username`, `password`, `email`) VALUES
 (1, 'Admin', '827ccb0eea8a706c4c34a16891f84e7b', 'admin@freshfood.com'),
-(4, 'chibai', 'e10adc3949ba59abbe56e057f20f883e', 'setiawanaldi.0508@gmail.com'),
-(5, 'FightteamAgen', '098f6bcd4621d373cade4e832627b4f6', 'aldi@gmail.com'),
-(6, 'asep', 'dc855efb0dc7476760afaa1b281665f1', 'asep@gmail.com'),
-(7, 'bambang', 'a9711cbb2e3c2d5fc97a63e45bbe5076', 'bambang@gmail.com');
 
 --
 -- Indexes for dumped tables
